@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use App\Form\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -36,6 +38,8 @@ class HomepageController extends AbstractController
      */
     public function registerPage()
     {
-        return $this->render('register.html.twig');
+        $user = new User();
+        $form = $this->createForm(RegisterType::class, $user);
+        return $this->render('Disconnected/register.html.twig', array('form' => $form->createView()));
     }
 }

@@ -6,39 +6,37 @@
 	<section class="set-bg" data-setbg="img/recent-game-bg.png">
 		<div class="community-warp spad">
 			<div class="inner">
-				<form action="{{path('register')}}" class="home-form">
+				{{ form_start(form, {'action': path('register'), 'method': 'GET'}) }}
 					<h3>Registration Form</h3>
 					<div class="form-group">
 						<div class="form-wrapper">
-							<label for="">First Name</label>
-							<input type="text" class="form-control">
+							{{ form_row(form.firstName, {'attr': {'class': 'form-control'}}) }}
 						</div>
 						<div class="form-wrapper">
-							<label for="">Last Name</label>
-							<input type="text" class="form-control">
+							{{ form_row(form.lastName, {'attr': {'class': 'form-control'}}) }}
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="form-wrapper">
-							<label for="">Pseudo</label>
-							<input type="text" class="form-control">
+							{{ form_row(form.pseudo, {'attr': {'class': 'form-control'}}) }}
 						</div>
 						<div class="form-wrapper">
-							<label for="">Email</label>
-							<input type="text" class="form-control">
+							{{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-wrapper">
+							{{ form_row(form.birthdate, {'attr': {'class': 'form-control'}}) }}
+						</div>
+						<div class="form-wrapper">
+							{{ form_row(form.sex, {'attr': {'class': 'form-control'}}) }}
 						</div>
 					</div>
 					<div class="form-wrapper">
-						<label for="">Birthdate</label>
-						<input type="date" class="form-control">
+						{{ form_row(form.password.first, {'attr': {'class': 'form-control'}}) }}
 					</div>
 					<div class="form-wrapper">
-						<label for="">Password</label>
-						<input type="password" class="form-control">
-					</div>
-					<div class="form-wrapper">
-						<label for="">Confirm Password</label>
-						<input type="password" class="form-control">
+						{{ form_row(form.password.second, {'attr': {'class': 'form-control'}}) }}
 					</div>
 					<!--div class="checkbox">
 						<label>
@@ -46,8 +44,8 @@
 							<span class="checkmark"></span>
 						</label>
 					</div-->
-					<button>Register Now</button>
-				</form>
+					<button type="submit">Register Now</button>
+				{{ form_end(form) }}
 			</div>
 		</div>
 	</section>

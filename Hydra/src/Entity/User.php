@@ -50,7 +50,7 @@ class User
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $sexe;
+    private $sex;
     
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -319,16 +319,16 @@ class User
     /**
      * @return mixed
      */
-    public function getSexe()
+    public function getsex()
     {
-        return $this->sexe;
+        return $this->sex;
     }
 
     /**
-     * @param mixed $sexe
+     * @param mixed $sex
      */
-    public function setSexe($sexe): void
+    public function setsex($sex): void
     {
-        $this->sexe = $sexe;
+        $this->sex = $sex;
     }
 }
