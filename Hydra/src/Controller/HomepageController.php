@@ -34,7 +34,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/registerpage", name="register")
+     * @Route("/registerpage", name="registerpage")
      */
     public function registerPage()
     {

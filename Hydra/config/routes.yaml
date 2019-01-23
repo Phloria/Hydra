@@ -1,3 +1,7 @@
 index:
     path: /
     controller: App\Controller\HomepageController::index
+
+registerpage:
+    path: /registration
+    controller: App\Controller\HomepageController::registerpage

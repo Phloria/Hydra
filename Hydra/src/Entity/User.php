@@ -50,7 +50,7 @@ class User
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $sex;
+    private $gender;
     
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -68,22 +68,48 @@ class User
     private $role;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * 1: Silver 1
+     * 2: Silver 2
+     * 3: Silver 3
+     * 4: Silver 4
+     * 5: Silver Elite
+     * 6: Silver Elite Master
+     * 7: Nova 1
+     * 8: Nova 2
+     * 9: Nova 3
+     * 10: Nova Master
+     * 11: Master Guardian
+     * 12: Master Guardian 2
+     * 13: Master Guardian Elite
+     * 14: Distinguished Master Guardian
+     * 15: Legendary Eagle
+     * 16: Legendary Eagle Master
+     * 17: Supreme Master First Class
+     * 18: The Global Elite
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $csgo_actual_rank;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $csgo_best_rank;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * 1: Bronze
+     * 2: Silver
+     * 3: Gold
+     * 4: Platinum
+     * 5: Diamond
+     * 6: Master
+     * 7: GrandMaster
+     * 8: Top 500
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $ow_actual_rank;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $ow_best_rank;
 
@@ -319,16 +345,16 @@ class User
     /**
      * @return mixed
      */
-    public function getsex()
+    public function getgender()
     {
-        return $this->sex;
+        return $this->gender;
     }
 
     /**
-     * @param mixed $sex
+     * @param mixed $gender
      */
-    public function setsex($sex): void
+    public function setgender($gender): void
     {
-        $this->sex = $sex;
+        $this->gender = $gender;
     }
 }

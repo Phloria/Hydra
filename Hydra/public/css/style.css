@@ -261,6 +261,10 @@ ol {
 	padding-top: 6px;
 }
 
+.button-profile {
+	margin-right: 10px;
+}
+
 .user-panel {
 	float: right;
 	font-weight: 500;
