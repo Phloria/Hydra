@@ -23,22 +23,22 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=80, unique=true)
+     * @ORM\Column(type="string", length=50, unique=true)
      */
-    private $nickname;
+    private $pseudo;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=50)
      */
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=40)
      */
     private $firstName;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=40)
      */
     private $lastName;
 
@@ -47,6 +47,11 @@ class User
      */
     private $email;
 
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $sexe;
+    
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
@@ -106,17 +111,17 @@ class User
     /**
      * @return mixed
      */
-    public function getNickname()
+    public function getpseudo()
     {
-        return $this->nickname;
+        return $this->pseudo;
     }
 
     /**
-     * @param mixed $nickname
+     * @param mixed $pseudo
      */
-    public function setNickname($nickname): void
+    public function setpseudo($pseudo): void
     {
-        $this->nickname = $nickname;
+        $this->pseudo = $pseudo;
     }
 
     /**
@@ -309,5 +314,21 @@ class User
     public function setPubgLink($pubg_link): void
     {
         $this->pubg_link = $pubg_link;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    /**
+     * @param mixed $sexe
+     */
+    public function setSexe($sexe): void
+    {
+        $this->sexe = $sexe;
     }
 }

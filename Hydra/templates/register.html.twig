@@ -1,0 +1,54 @@
+{% extends "Header-Footer/header_disconnected.html.twig" %}
+{% block header %}
+	<link rel="stylesheet" href="register/css/style.css"/>
+{% endblock %}
+{% block content %}
+	<section class="set-bg" data-setbg="img/recent-game-bg.png">
+		<div class="community-warp spad">
+			<div class="inner">
+				<form action="{{path('register')}}" class="home-form">
+					<h3>Registration Form</h3>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">First Name</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Last Name</label>
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">Pseudo</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Email</label>
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-wrapper">
+						<label for="">Birthdate</label>
+						<input type="date" class="form-control">
+					</div>
+					<div class="form-wrapper">
+						<label for="">Password</label>
+						<input type="password" class="form-control">
+					</div>
+					<div class="form-wrapper">
+						<label for="">Confirm Password</label>
+						<input type="password" class="form-control">
+					</div>
+					<!--div class="checkbox">
+						<label>
+							<input type="checkbox"> I accept the Terms of Use & Privacy Policy.
+							<span class="checkmark"></span>
+						</label>
+					</div-->
+					<button>Register Now</button>
+				</form>
+			</div>
+		</div>
+	</section>
+{% endblock %}

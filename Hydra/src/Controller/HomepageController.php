@@ -16,18 +16,26 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/Games", name="games")
+     * @Route("/Gamespage", name="games")
      */
-    public function games()
+    public function gamesPage()
     {
         return $this->render('games.html.twig');
     }
 
     /**
-     * @Route("/Members", name="members")
+     * @Route("/Memberspage", name="members")
      */
-    public function members()
+    public function membersPage()
     {
         return $this->render('members.html.twig');
+    }
+
+    /**
+     * @Route("/registerpage", name="register")
+     */
+    public function registerPage()
+    {
+        return $this->render('register.html.twig');
     }
 }
