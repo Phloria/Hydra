@@ -19,27 +19,27 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=80, nullable=false, unique=true)
+     * @ORM\Column(type="string", length=80, unique=true)
      */
     private $nickname;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=false)
+     * @ORM\Column(type="string", length=100)
      */
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=false)
+     * @ORM\Column(type="string", length=50)
      */
     private $firstName;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=false)
+     * @ORM\Column(type="string", length=50)
      */
     private $lastName;
 
     /**
-     * @ORM\Column(type="string", length=80, nullable=false, unique=true)
+     * @ORM\Column(type="string", length=80, unique=true)
      */
     private $email;
 
@@ -47,4 +47,263 @@ class User
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $joindate;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $birthdate;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $role;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $csgo_actual_rank;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $csgo_best_rank;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $ow_actual_rank;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $ow_best_rank;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $pubg_link;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNickname()
+    {
+        return $this->nickname;
+    }
+
+    /**
+     * @param mixed $nickname
+     */
+    public function setNickname($nickname): void
+    {
+        $this->nickname = $nickname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password): void
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * @param mixed $firstName
+     */
+    public function setFirstName($firstName): void
+    {
+        $this->firstName = $firstName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @param mixed $lastName
+     */
+    public function setLastName($lastName): void
+    {
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJoindate()
+    {
+        return $this->joindate;
+    }
+
+    /**
+     * @param mixed $joindate
+     */
+    public function setJoindate($joindate): void
+    {
+        $this->joindate = $joindate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBirthdate()
+    {
+        return $this->birthdate;
+    }
+
+    /**
+     * @param mixed $birthdate
+     */
+    public function setBirthdate($birthdate): void
+    {
+        $this->birthdate = $birthdate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param mixed $role
+     */
+    public function setRole($role): void
+    {
+        $this->role = $role;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCsgoActualRank()
+    {
+        return $this->csgo_actual_rank;
+    }
+
+    /**
+     * @param mixed $csgo_actual_rank
+     */
+    public function setCsgoActualRank($csgo_actual_rank): void
+    {
+        $this->csgo_actual_rank = $csgo_actual_rank;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCsgoBestRank()
+    {
+        return $this->csgo_best_rank;
+    }
+
+    /**
+     * @param mixed $csgo_best_rank
+     */
+    public function setCsgoBestRank($csgo_best_rank): void
+    {
+        $this->csgo_best_rank = $csgo_best_rank;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOwActualRank()
+    {
+        return $this->ow_actual_rank;
+    }
+
+    /**
+     * @param mixed $ow_actual_rank
+     */
+    public function setOwActualRank($ow_actual_rank): void
+    {
+        $this->ow_actual_rank = $ow_actual_rank;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOwBestRank()
+    {
+        return $this->ow_best_rank;
+    }
+
+    /**
+     * @param mixed $ow_best_rank
+     */
+    public function setOwBestRank($ow_best_rank): void
+    {
+        $this->ow_best_rank = $ow_best_rank;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPubgLink()
+    {
+        return $this->pubg_link;
+    }
+
+    /**
+     * @param mixed $pubg_link
+     */
+    public function setPubgLink($pubg_link): void
+    {
+        $this->pubg_link = $pubg_link;
+    }
 }
