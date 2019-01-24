@@ -6,47 +6,17 @@
 	<section class="set-bg" data-setbg="img/recent-game-bg.png">
 		<div class="community-warp spad">
 			<div class="inner">
-				<form method="post" action="{{path('register')}}" class="home-form">
-				{{ form_start(form) }}
-					<h3>Registration Form</h3>
-					<div class="form-group">
-						<div class="form-wrapper">
-							{{ form_row(form.firstName, {'attr': {'class': 'form-control'}}) }}
-						</div>
-						<div class="form-wrapper">
-							{{ form_row(form.lastName, {'attr': {'class': 'form-control'}}) }}
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="form-wrapper">
-							{{ form_row(form.pseudo, {'attr': {'class': 'form-control'}}) }}
-						</div>
-						<div class="form-wrapper">
-							{{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="form-wrapper">
-							{{ form_row(form.birthdate, {'attr': {'class': 'form-control'}}) }}
-						</div>
-						<div class="form-wrapper">
-							{{ form_row(form.gender, {'attr': {'class': 'form-control'}}) }}
-						</div>
+				<form method="post" action="{{path('login')}}" class="home-form">
+					<h3>Connection</h3>
+					<div class="form-wrapper">
+						<label for="inputAddressMail">AddressMail </label>
+						<input type="text" id="inputAddressMail" name="_mail" class='form-control' required autofocus>
 					</div>
 					<div class="form-wrapper">
-						{{ form_row(form.password.first, {'attr': {'class': 'form-control'}}) }}
+						<label for="inputPassword">Password </label>
+						<input type="password" id="inputPassword" name="_password" class='form-control' required>
 					</div>
-					<div class="form-wrapper">
-						{{ form_row(form.password.second, {'attr': {'class': 'form-control'}}) }}
-					</div>
-					<!--div class="checkbox">
-						<label>
-							<input type="checkbox"> I accept the Terms of Use & Privacy Policy.
-							<span class="checkmark"></span>
-						</label>
-					</div-->
-					<button type="submit">Register</button>
-				{{ form_end(form) }}
+					<button type="submit">Log In</button>
 				</form>
 			</div>
 		</div>

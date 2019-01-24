@@ -42,4 +42,12 @@ class HomepageController extends AbstractController
         $form = $this->createForm(RegisterType::class, $user);
         return $this->render('Disconnected/register.html.twig', array('form' => $form->createView()));
     }
+
+    /**
+     * @Route("/loginpage", name="loginpage")
+     */
+    public function loginPage()
+    {
+        return $this->render('Disconnected/login.html.twig');
+    }
 }

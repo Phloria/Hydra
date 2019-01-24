@@ -15,6 +15,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Psr\Log\LoggerInterface;
+use Egulias\EmailValidator\EmailValidator;
+use Egulias\EmailValidator\Validation\DNSCheckValidation;
+use Egulias\EmailValidator\Validation\MultipleValidationWithAnd;
+use Egulias\EmailValidator\Validation\RFCValidation;
 
 class UserController extends AbstractController
 {
@@ -25,23 +29,39 @@ class UserController extends AbstractController
         $this->logger = $logger;
     }
 
+    public function mailRandomPassword(\Swift_Mailer $mailer, $email, $firstName)
+    {
+        $message = (new \Swift_Message('You\'ve successfully created an account on HydraMind Gaming Site!'))
+            ->setFrom('tulisac1@gmail.com')
+            ->setTo($email)
+            ->setBody(
+                $this->renderView(
+                // templates/Email/registration.html.twig
+                    'Email/registration.html.twig',
+                    array('name' => $firstName)
+                ),
+                'text/html'
+            );
+        $mailer->send($message);
+    }
+
     /**
      * @Route("/register", name="register")
      */
-    public function register(Request $request, LoggerInterface $logger)
+    public function register(Request $request, \Swift_Mailer $mailer)
     {
         $user = new User();
         $form = $this->createForm(RegisterType::class, $user);
-        $logger->info('I just got the logger');
         $form->handleRequest($request);
 
         $entityManager = $this->getDoctrine()->getManager();
         $user2 = $entityManager->getRepository(User::class)->findBy(array('email'=>$user->getEmail()));
         if ($user2)
             return $this->render('Disconnected/register.html.twig', array('form' => $form->createView(),'error' => 1));
-        $logger->info('I just got the logger');
+
         if ($form->isSubmitted() && $form->isValid())
         {
+            $this->mailRandomPassword($mailer, $user->getEmail(), $user->getFirstName());
             $entityManager->persist($user);
             $entityManager->flush();
             $session = $request->getSession();
@@ -49,12 +69,11 @@ class UserController extends AbstractController
 
             return $this->render('index.html.twig');
         }
-
         return $this->render('Disconnected/register.html.twig', array('form' => $form->createView(),'error' => 1));
     }
 
     /**
-     * @Route("/login", name="user_login")
+     * @Route("/login", name="login")
      */
     public function login(Request $request)
     {
