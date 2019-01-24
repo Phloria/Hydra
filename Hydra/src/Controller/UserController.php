@@ -29,7 +29,7 @@ class UserController extends AbstractController
         $this->logger = $logger;
     }
 
-    public function mailRandomPassword(\Swift_Mailer $mailer, $email, $firstName)
+    public function mailRegistration(\Swift_Mailer $mailer, $email, $firstName)
     {
         $message = (new \Swift_Message('You\'ve successfully created an account on HydraMind Gaming Site!'))
             ->setFrom('tulisac1@gmail.com')
@@ -61,7 +61,7 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $this->mailRandomPassword($mailer, $user->getEmail(), $user->getFirstName());
+            $this->mailRegistration($mailer, $user->getEmail(), $user->getFirstName());
             $entityManager->persist($user);
             $entityManager->flush();
             $session = $request->getSession();
