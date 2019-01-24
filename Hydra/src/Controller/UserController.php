@@ -77,17 +77,23 @@ class UserController extends AbstractController
      */
     public function login(Request $request)
     {
-        $email = $request->get('_mail');
+        $pseudo = $request->get('_pseudo');
         $password = $request->get('_password');
         $entityManager = $this->getDoctrine()->getManager();
-        $user = $entityManager->getRepository(User::class)->findBy(array('email'=>$email, 'password'=>$password));
+        $user_mail = $entityManager->getRepository(User::class)->findBy(array('email'=>$pseudo, 'password'=>$password));
+        $user_pseudo = $entityManager->getRepository(User::class)->findBy(array('pseudo'=>$pseudo, 'password'=>$password));
+        $user = null;
+        if ($user_mail)
+            $user = $user_mail;
+        else if ($user_pseudo)
+            $user = $user_pseudo;
         if ($user)
         {
             $session = $request->getSession();
             $session->set('user', $user[0]);
             if ($user[0]->getEmail() == "admin")
-                return $this->render('Admin/connected.html.twig');
-            return $this->render('Connected/connected.html.twig');
+                return $this->render('index.html.twig');
+            return $this->render('index.html.twig');
         }
         return $this->render('Disconnected/login.html.twig', array('error' => 1));
     }
