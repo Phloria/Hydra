@@ -47,10 +47,10 @@ a:hover {
   align-items: center; }
 
 .inner {
-  min-width: 850px;
+  min-width: 500px;
   margin: auto;
-  padding-top: 68px;
-  padding-bottom: 48px;
+  padding-top: 0px;
+  padding-bottom: 10px;
   background: url("."); }
   .inner h3 {
     text-transform: uppercase;
@@ -60,6 +60,21 @@ a:hover {
     margin-bottom: 32px;
     color: #333;
     letter-spacing: 2px; }
+
+.innerb {
+  min-width: 500px;
+  margin: auto;
+  padding-top: 150px;
+  padding-bottom: 170px;
+  background: url("."); }
+.innerb h3 {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Muli-Bold";
+  text-align: center;
+  margin-bottom: 32px;
+  color: #333;
+  letter-spacing: 2px; }
 
 form {
   width: 50%;

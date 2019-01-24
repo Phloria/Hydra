@@ -34,7 +34,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/registerpage", name="registerpage")
+     * @Route("/registerpage", name="register_page")
      */
     public function registerPage()
     {
@@ -44,10 +44,18 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/loginpage", name="loginpage")
+     * @Route("/loginpage", name="login_page")
      */
     public function loginPage()
     {
         return $this->render('Disconnected/login.html.twig');
+    }
+
+    /**
+     * @Route("/forgetpasswordpage", name="forget_password_page")
+     */
+    public function forgetPasswordPage()
+    {
+        return $this->render('Disconnected/forget_password.html.twig', array('error' => 0));
     }
 }

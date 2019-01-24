@@ -107,4 +107,58 @@ class UserController extends AbstractController
         $session->set('user', "");
         return $this->render('index.html.twig');
     }
+
+    public function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
+    public function mailRandomPassword(\Swift_Mailer $mailer, $email, $firstName, $password)
+    {
+        $message = (new \Swift_Message('You\'ve successfully reset your password !'))
+            ->setFrom('tulisac1@gmail.com')
+            ->setTo($email)
+            ->setBody(
+                $this->renderView(
+                // templates/Email/registration.html.twig
+                    'Email/forget_password.html.twig',
+                    array('name' => $firstName, 'password' => $password)
+                ),
+                'text/html'
+            );
+        $mailer->send($message);
+    }
+
+    /**
+     * @Route("/forgetpassword", name="forget_password")
+     */
+    public function forgetPassword(Request $request, \Swift_Mailer $mailer)
+    {
+        $pseudo = $request->get('_pseudo');
+        $entityManager = $this->getDoctrine()->getManager();
+        $user_pseudo = $entityManager->getRepository(User::class)->findBy(array('pseudo'=>$pseudo));
+        $user_mail = $entityManager->getRepository(User::class)->findBy(array('email'=>$pseudo));
+        $user = null;
+        if ($user_pseudo)
+            $user = $user_pseudo;
+        else if ($user_mail)
+            $user = $user_mail;
+        if ($user)
+        {
+            $newpassword = $this->generateRandomString();
+            $user[0]->setPassword($newpassword);
+            $entityManager->persist($user[0]);
+            $entityManager->flush();
+            $this->mailRandomPassword($mailer, $user[0]->getEmail(), $user[0]->getFirstName(), $user[0]->getPassword());
+            return $this->render('index.html.twig');
+        } else {
+            return $this->render('Disconnected/forget_password.html.twig', array('error' => 1));
+        }
+
+    }
 }

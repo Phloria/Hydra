@@ -5,11 +5,11 @@
 {% block content %}
 	<section class="set-bg" data-setbg="img/recent-game-bg.png">
 		<div class="community-warp spad">
-			<div class="inner">
+			<div class="innerb">
 				<form method="post" action="{{path('login')}}" class="home-form">
 					<h3>Connection</h3>
 					<div class="form-wrapper">
-						<label for="inputAddressMail">Pseudo or Mail </label>
+						<label for="inputAddressMail">Pseudo or Email </label>
 						<input type="text" id="inputAddressMail" name="_pseudo" class='form-control' required autofocus>
 					</div>
 					<div class="form-wrapper">
@@ -17,6 +17,9 @@
 						<input type="password" id="inputPassword" name="_password" class='form-control' required>
 					</div>
 					<button type="submit">Log In</button>
+				</form>
+				<form action="{{ path('forget_password_page') }}" method="get">
+					<button type="submit">Forgot password</button>
 				</form>
 			</div>
 		</div>
