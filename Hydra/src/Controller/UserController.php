@@ -19,6 +19,7 @@ use Egulias\EmailValidator\EmailValidator;
 use Egulias\EmailValidator\Validation\DNSCheckValidation;
 use Egulias\EmailValidator\Validation\MultipleValidationWithAnd;
 use Egulias\EmailValidator\Validation\RFCValidation;
+use Symfony\Component\Validator\Constraints\Date;
 
 class UserController extends AbstractController
 {
@@ -62,6 +63,7 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid())
         {
             $this->mailRegistration($mailer, $user->getEmail(), $user->getFirstName());
+            $user->setJoindate(date("Y-m-d H:i:s"));
             $entityManager->persist($user);
             $entityManager->flush();
             $session = $request->getSession();

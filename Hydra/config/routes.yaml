@@ -5,3 +5,7 @@ index:
 registerpage:
     path: /registration
     controller: App\Controller\HomepageController::registerpage
+
+profilepage:
+    path: /profile
+    controller: App\Controller\HomepageController::profilepage

@@ -58,4 +58,12 @@ class HomepageController extends AbstractController
     {
         return $this->render('Disconnected/forget_password.html.twig', array('error' => 0));
     }
+
+    /**
+     * @Route("/profilepage", name="profile_page")
+     */
+    public function profilePage()
+    {
+        return $this->render('Connected/profile.html.twig', array('error' => 0));
+    }
 }
