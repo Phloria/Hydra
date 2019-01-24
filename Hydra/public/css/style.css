@@ -261,8 +261,23 @@ ol {
 	padding-top: 6px;
 }
 
-.button-profile {
+.space {
 	margin-right: 10px;
+}
+
+.profile-button {
+	float: right;
+	font-weight: 500;
+	background: #ffb320;
+	padding: 8px 28px;
+	border-radius: 30px;
+	width: 110px;
+	text-align: center;
+}
+
+.profile-button a {
+	font-size: 14px;
+	color: #131313;
 }
 
 .user-panel {
