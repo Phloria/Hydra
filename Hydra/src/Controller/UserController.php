@@ -15,11 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Psr\Log\LoggerInterface;
-use Egulias\EmailValidator\EmailValidator;
-use Egulias\EmailValidator\Validation\DNSCheckValidation;
-use Egulias\EmailValidator\Validation\MultipleValidationWithAnd;
-use Egulias\EmailValidator\Validation\RFCValidation;
-use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserController extends AbstractController
 {
@@ -49,7 +45,7 @@ class UserController extends AbstractController
     /**
      * @Route("/register", name="register")
      */
-    public function register(Request $request, \Swift_Mailer $mailer)
+    public function register(Request $request, \Swift_Mailer $mailer, UserPasswordEncoderInterface $encoder)
     {
         $user = new User();
         $form = $this->createForm(RegisterType::class, $user);
@@ -64,6 +60,8 @@ class UserController extends AbstractController
         {
             $this->mailRegistration($mailer, $user->getEmail(), $user->getFirstName());
             $user->setJoindate(new \DateTime());
+            $encoded = $encoder->encodePassword($user, $user->getPassword());
+            $user->setPassword($encoded);
             $entityManager->persist($user);
             $entityManager->flush();
             $session = $request->getSession();
@@ -72,42 +70,6 @@ class UserController extends AbstractController
             return $this->render('index.html.twig');
         }
         return $this->render('Disconnected/register.html.twig', array('form' => $form->createView(),'error' => 1));
-    }
-
-    /**
-     * @Route("/login", name="login")
-     */
-    public function login(Request $request)
-    {
-        $username = $request->get('_username');
-        $password = $request->get('_password');
-        $entityManager = $this->getDoctrine()->getManager();
-        $user_mail = $entityManager->getRepository(User::class)->findBy(array('email'=>$username, 'password'=>$password));
-        $user_username = $entityManager->getRepository(User::class)->findBy(array('username'=>$username, 'password'=>$password));
-        $user = null;
-        if ($user_mail)
-            $user = $user_mail;
-        else if ($user_username)
-            $user = $user_username;
-        if ($user)
-        {
-            $session = $request->getSession();
-            $session->set('user', $user[0]);
-            if ($user[0]->getEmail() == "admin")
-                return $this->render('index.html.twig');
-            return $this->render('index.html.twig');
-        }
-        return $this->render('Disconnected/login.html.twig', array('error' => 1));
-    }
-
-    /**
-     * @Route("/disconnect", name="disconnect")
-     */
-    public function disconnect(Request $request)
-    {
-        $session = $request->getSession();
-        $session->set('user', "");
-        return $this->render('index.html.twig');
     }
 
     public function generateRandomString($length = 10) {

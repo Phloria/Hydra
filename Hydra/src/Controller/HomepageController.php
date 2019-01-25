@@ -48,7 +48,7 @@ class HomepageController extends AbstractController
      */
     public function loginPage()
     {
-        return $this->render('Disconnected/login.html.twig');
+        return $this->render('Disconnected/login.html.twig', array('error'=> 0, 'last_username' => ''));
     }
 
     /**

@@ -1,4 +1,4 @@
-{% extends app.session.get('user') ? "Header-Footer/header_connected.html.twig" : "Header-Footer/header_disconnected.html.twig" %}
+{% extends is_granted('IS_AUTHENTICATED_FULLY') ? "Header-Footer/header_connected.html.twig" : "Header-Footer/header_disconnected.html.twig" %}
 {% block content %}
 	<!-- Hero section -->
 	<section class="hero-section">

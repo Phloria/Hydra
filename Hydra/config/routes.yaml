@@ -9,3 +9,6 @@ registerpage:
 profilepage:
     path: /profile
     controller: App\Controller\HomepageController::profilepage
+
+logout:
+    path: /logout
