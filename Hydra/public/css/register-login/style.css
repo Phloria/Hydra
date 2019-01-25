@@ -1,3 +1,50 @@
+@font-face {
+  font-family: "Muli-Regular";
+  src: url("../../fonts/muli/Muli-Regular.ttf"); }
+@font-face {
+  font-family: "Muli-SemiBold";
+  src: url("../../fonts/muli/Muli-SemiBold.ttf"); }
+@font-face {
+  font-family: "Muli-Bold";
+  src: url("../../fonts/muli/Muli-Bold.ttf"); }
+
+.registration-text {
+  font-family: "Muli-Regular";
+  color: #000000;
+  font-size: 14px;
+  margin: 0;
+}
+
+.inner {
+  min-width: 500px;
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  background: url("."); }
+.inner h3 {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Muli-Bold";
+  text-align: center;
+  margin-bottom: 32px;
+  color: #333;
+  letter-spacing: 2px; }
+
+.innerb {
+  min-width: 500px;
+  margin: auto;
+  padding-top: 150px;
+  padding-bottom: 170px;
+  background: url("."); }
+.innerb h3 {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Muli-Bold";
+  text-align: center;
+  margin-bottom: 32px;
+  color: #333;
+  letter-spacing: 2px; }
+
 form {
   width: 50%;
   padding-left: 45px;
