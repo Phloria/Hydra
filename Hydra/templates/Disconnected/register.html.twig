@@ -1,11 +1,11 @@
 {% extends "Header-Footer/header_disconnected.html.twig" %}
 {% block header %}
-	<link rel="stylesheet" href="register/css/style.css"/>
+	<link rel="stylesheet" href="css/register-login/style.css"/>
 {% endblock %}
 {% block content %}
 	<section class="set-bg" data-setbg="img/recent-game-bg.png">
 		<div class="community-warp spad">
-			<div class="inner">
+			<div class="inner registration-text">
 				<form method="post" action="{{path('register')}}" class="home-form">
 				{{ form_start(form) }}
 					<h3>Registration Form</h3>

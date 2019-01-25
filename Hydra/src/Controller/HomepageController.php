@@ -18,7 +18,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/Gamespage", name="games")
+     * @Route("/Gamespage", name="games_page")
      */
     public function gamesPage()
     {
@@ -65,5 +65,13 @@ class HomepageController extends AbstractController
     public function profilePage()
     {
         return $this->render('Connected/profile.html.twig', array('error' => 0));
+    }
+
+    /**
+     * @Route("/Videospage", name="videos_page")
+     */
+    public function videosPage()
+    {
+        return $this->render('videos.html.twig');
     }
 }
