@@ -10,6 +10,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -26,7 +27,7 @@ class User
     /**
      * @ORM\Column(type="string", length=50, unique=true)
      */
-    private $pseudo;
+    private $username;
 
     /**
      * @ORM\Column(type="string", length=50)
@@ -142,17 +143,17 @@ class User
     /**
      * @return mixed
      */
-    public function getpseudo()
+    public function getUsername()
     {
-        return $this->pseudo;
+        return $this->username;
     }
 
     /**
-     * @param mixed $pseudo
+     * @param mixed $username
      */
-    public function setpseudo($pseudo): void
+    public function setUsername($username): void
     {
-        $this->pseudo = $pseudo;
+        $this->username = $username;
     }
 
     /**

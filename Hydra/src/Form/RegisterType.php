@@ -24,7 +24,7 @@ class RegisterType extends AbstractType
                 'first_options'  => array('label' => 'Password'),
                 'second_options' => array('label' => 'Repeat Password'),
     ))
-            ->add('pseudo', TextType::class)
+            ->add('username', TextType::class)
             ->add('firstName', TextType::class)
             ->add('lastName', TextType::class)
             ->add('email', EmailType::class)

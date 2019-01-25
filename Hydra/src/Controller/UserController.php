@@ -79,16 +79,16 @@ class UserController extends AbstractController
      */
     public function login(Request $request)
     {
-        $pseudo = $request->get('_pseudo');
+        $username = $request->get('_username');
         $password = $request->get('_password');
         $entityManager = $this->getDoctrine()->getManager();
-        $user_mail = $entityManager->getRepository(User::class)->findBy(array('email'=>$pseudo, 'password'=>$password));
-        $user_pseudo = $entityManager->getRepository(User::class)->findBy(array('pseudo'=>$pseudo, 'password'=>$password));
+        $user_mail = $entityManager->getRepository(User::class)->findBy(array('email'=>$username, 'password'=>$password));
+        $user_username = $entityManager->getRepository(User::class)->findBy(array('username'=>$username, 'password'=>$password));
         $user = null;
         if ($user_mail)
             $user = $user_mail;
-        else if ($user_pseudo)
-            $user = $user_pseudo;
+        else if ($user_username)
+            $user = $user_username;
         if ($user)
         {
             $session = $request->getSession();
@@ -141,13 +141,13 @@ class UserController extends AbstractController
      */
     public function forgetPassword(Request $request, \Swift_Mailer $mailer)
     {
-        $pseudo = $request->get('_pseudo');
+        $username = $request->get('_username');
         $entityManager = $this->getDoctrine()->getManager();
-        $user_pseudo = $entityManager->getRepository(User::class)->findBy(array('pseudo'=>$pseudo));
-        $user_mail = $entityManager->getRepository(User::class)->findBy(array('email'=>$pseudo));
+        $user_username = $entityManager->getRepository(User::class)->findBy(array('username'=>$username));
+        $user_mail = $entityManager->getRepository(User::class)->findBy(array('email'=>$username));
         $user = null;
-        if ($user_pseudo)
-            $user = $user_pseudo;
+        if ($user_username)
+            $user = $user_username;
         else if ($user_mail)
             $user = $user_mail;
         if ($user)
