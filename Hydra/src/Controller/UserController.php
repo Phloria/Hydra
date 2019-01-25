@@ -63,7 +63,7 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid())
         {
             $this->mailRegistration($mailer, $user->getEmail(), $user->getFirstName());
-            $user->setJoindate(date("Y-m-d H:i:s"));
+            $user->setJoindate(new \DateTime());
             $entityManager->persist($user);
             $entityManager->flush();
             $session = $request->getSession();
