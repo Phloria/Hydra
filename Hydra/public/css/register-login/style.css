@@ -48,26 +48,68 @@
 .innerprofile {
   min-height: 100px;
   margin: auto;
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 170px;
   background: url(".");
 }
 
 .bgprofile {
   width: 36%;
+  height: 90%;
+  position: center;
+  margin: auto;
+  background: rgba(250, 250, 250, 0);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.bginsideprofile {
+  width: 100%;
+  height: 100%;
+  align-self: center;
   position: center;
   margin: auto;
   background: rgba(250, 250, 250, 1);
 }
 
 .centerprofile{
-  min-width: 000px;
+  min-width: 500px;
   max-width: 700px;
   margin: auto;
-
-  padding-top: 150px;
+  text-align: center;
   padding-bottom: 170px;
   background: url(".");
+}
+
+.descriptionprofile{
+  width: 90%;
+  height: 40%;
+  align-self: center;
+  position: center;
+  margin: auto;
+}
+
+.imgprofile {
+  width: 150px;
+  height: 150px;
+  size: auto;
+}
+
+.size-btn {
+  text-align: center;
+  font-size: 15px;
+  color: #131313;
+  min-width: 180px;
+  border-radius: 50px;
+  font-weight: 500;
+  border: none;
+  background: #ffb320;
+  cursor: pointer;
+  text-transform: none;
+}
+
+.size-btn:hover {
+  color: #fdb221;
 }
 
 form {
