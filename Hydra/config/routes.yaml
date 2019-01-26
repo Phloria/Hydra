@@ -12,3 +12,7 @@ profilepage:
 
 logout:
     path: /logout
+
+video:
+    path: /videos
+    controller: App\Controller\HomepageController::Videospage

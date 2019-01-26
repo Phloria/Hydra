@@ -265,23 +265,10 @@ ol {
 	margin-right: 10px;
 }
 
-.profile-button {
-	float: right;
-	font-weight: 500;
-	background: #ffb320;
-	padding: 8px 28px;
-	border-radius: 30px;
-	width: 110px;
-	text-align: center;
-}
-
-.profile-button a {
-	font-size: 14px;
-	color: #131313;
-}
-
 .user-panel {
 	float: right;
+	width: 100px;
+	text-align: center;
 	font-weight: 500;
 	background: #ffb320;
 	padding: 8px 28px;
@@ -293,9 +280,24 @@ ol {
 	color: #131313;
 }
 
+.user-panelb {
+	float: right;
+	width: 110px;
+	text-align: center;
+	font-weight: 500;
+	background: #ffb320;
+	padding: 8px 28px;
+	border-radius: 30px;
+}
+
+.user-panelb a {
+	font-size: 14px;
+	color: #131313;
+}
+
 .main-menu {
 	float: right;
-	margin-right: 170px;
+	margin-right: 90px;
 }
 
 .main-menu ul {

@@ -75,24 +75,25 @@ class User implements UserInterface, \Serializable
     private $role;
 
     /**
-     * 1: Silver 1
-     * 2: Silver 2
-     * 3: Silver 3
-     * 4: Silver 4
-     * 5: Silver Elite
-     * 6: Silver Elite Master
-     * 7: Nova 1
-     * 8: Nova 2
-     * 9: Nova 3
-     * 10: Nova Master
-     * 11: Master Guardian
-     * 12: Master Guardian 2
-     * 13: Master Guardian Elite
-     * 14: Distinguished Master Guardian
-     * 15: Legendary Eagle
-     * 16: Legendary Eagle Master
-     * 17: Supreme Master First Class
-     * 18: The Global Elite
+     * 1: None
+     * 2: Silver 1
+     * 3: Silver 2
+     * 4: Silver 3
+     * 5: Silver 4
+     * 6: Silver Elite
+     * 7: Silver Elite Master
+     * 8: Nova 1
+     * 9: Nova 2
+     * 10: Nova 3
+     * 11: Nova Master
+     * 12: Master Guardian
+     * 13: Master Guardian 2
+     * 14: Master Guardian Elite
+     * 15: Distinguished Master Guardian
+     * 16: Legendary Eagle
+     * 17: Legendary Eagle Master
+     * 18: Supreme Master First Class
+     * 19: The Global Elite
      * @ORM\Column(type="integer", nullable=true)
      */
     private $csgo_actual_rank;
@@ -103,14 +104,15 @@ class User implements UserInterface, \Serializable
     private $csgo_best_rank;
 
     /**
-     * 1: Bronze
-     * 2: Silver
-     * 3: Gold
-     * 4: Platinum
-     * 5: Diamond
-     * 6: Master
-     * 7: GrandMaster
-     * 8: Top 500
+     * 1: None
+     * 2: Bronze
+     * 3: Silver
+     * 4: Gold
+     * 5: Platinum
+     * 6: Diamond
+     * 7: Master
+     * 8: GrandMaster
+     * 9: Top 500
      * @ORM\Column(type="integer", nullable=true)
      */
     private $ow_actual_rank;

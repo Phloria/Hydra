@@ -1,3 +1,12 @@
+{% set menu %}
+    <li><a href="/">Home</a></li>
+    <li><a href="Videospage">Videos</a></li>
+    <li><a href="Gamespage">Games</a></li>
+    <li><a href="Teampage">Team</a></li>
+    <li><a href="Memberspage">Members</a></li>
+    <li><a href="contact.html">Contact</a></li>
+{% endset %}
+
 <html lang="zxx">
 <head>
     <title>HydraSoul Gaming</title>
@@ -37,10 +46,10 @@
             <a class="site-logo" href="/">
                 <img src="img/logo.png" alt="">
             </a>
-            <div class="user-panel">
-                <a href="logout">Disconnect</a>
+            <div class="user-panelb">
+                <a href="logout">Log out</a>
             </div>
-            <div class="profile-button space">
+            <div class="user-panel space">
                 <a href="profile">Profile</a>
             </div>
             <!-- responsive -->
@@ -50,11 +59,7 @@
             <!-- site menu -->
             <nav class="main-menu">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="Videospage">Videos</a></li>
-                    <li><a href="Gamespage">Games</a></li>
-                    <li><a href="Memberspage">Members</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    {{ menu }}
                 </ul>
             </nav>
         </div>
@@ -150,11 +155,7 @@
     <footer class="footer-section">
         <div class="container">
             <ul class="footer-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="Videospage">Videos</a></li>
-                <li><a href="Gamespage">Games</a></li>
-                <li><a href="Memberspage">Members</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                {{ menu }}
             </ul>
             <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>

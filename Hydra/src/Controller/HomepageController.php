@@ -26,11 +26,11 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/Memberspage", name="members")
+     * @Route("/Teampage", name="team_page")
      */
-    public function membersPage()
+    public function teamPage()
     {
-        return $this->render('members.html.twig');
+        return $this->render('team.html.twig');
     }
 
     /**
@@ -73,5 +73,13 @@ class HomepageController extends AbstractController
     public function videosPage()
     {
         return $this->render('videos.html.twig');
+    }
+
+    /**
+     * @Route("/Memberspage", name="members")
+     */
+    public function membersPage()
+    {
+        return $this->render('team.html.twig');
     }
 }
