@@ -63,13 +63,30 @@
   padding-bottom: 20px;
 }
 
-.bginsideprofile {
+.bgprofile-rank-cs1 {
+  width: 40%;
+  height: 90%;
+  position: center;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.bg-inside-profile {
   width: 100%;
   height: 100%;
   align-self: center;
   position: center;
   margin: auto;
   background: rgba(250, 250, 250, 1);
+}
+
+.bg-inside-profile-rank-cs1 {
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  position: center;
+  margin: auto;
 }
 
 .centerprofile{
@@ -99,17 +116,32 @@
   text-align: center;
   font-size: 15px;
   color: #131313;
-  min-width: 180px;
+  width: 200px;
   border-radius: 50px;
   font-weight: 500;
   border: none;
   background: #ffb320;
   cursor: pointer;
   text-transform: none;
+  padding: 10px 28px;
 }
 
 .size-btn:hover {
   color: #fdb221;
+}
+
+.user-panel-profile {
+  margin: auto;
+  font-family: "Muli-SemiBold";
+}
+
+.user-panel-profile a {
+  font-size: 15px;
+  color: #131313;
+}
+
+.space-bottom {
+  margin-bottom: 20px;
 }
 
 form {
@@ -129,6 +161,20 @@ form {
   .form-wrapper label {
     margin-bottom: 9px;
     display: block; }
+
+/*------------------
+form-wrapper2: writing in white
+---------------------*/
+.form-wrapper2 {
+  width: 50%;
+  margin-bottom: 17px;
+  color: #ffffff;}
+.form-wrapper2 label {
+  margin-bottom: 9px;
+  display: block; }
+.form-wrapper2:first-child {
+  margin-right: 20px; }
+
 
 .form-control {
   border: 2px solid #ccc;

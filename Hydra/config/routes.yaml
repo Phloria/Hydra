@@ -16,3 +16,7 @@ logout:
 video:
     path: /videos
     controller: App\Controller\HomepageController::Videospage
+
+profilepagerank:
+    path: /profile/rank
+    controller: App\Controller\HomepageController::profile_rank

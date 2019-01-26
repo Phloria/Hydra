@@ -1,0 +1,27 @@
+{% extends "Header-Footer/header_connected.html.twig" %}
+{% block header %}
+    <link rel="stylesheet" href="css/register-login/style.css"/>
+{% endblock %}
+{% block content %}
+    <section class="set-bg" data-setbg="img/profile-rank/Profile_rank_CS1.jpg">
+        <div class="bgprofile-rank-cs1">
+            <div class="bg-inside-profile-rank-cs1 inner-profile-rank-cs1 registration-text">
+                <div class="centerprofile">
+                    <div class="descriptionprofile">
+                        <h2>My Profile</h2><br><br>
+                        <div class="form-group">
+                            <div class="form-wrapper2">
+                                {{ form_row(form.birthdate, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-wrapper2">
+                                {{ form_row(form.gender, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                    </div>
+                    <button href="profile_rank" class="size-btn">Games Infos</button>
+                    <button href="" class="size-btn">Change Password</button>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

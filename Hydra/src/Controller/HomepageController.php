@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegisterType;
+use App\Form\ProfileRankType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -81,5 +82,15 @@ class HomepageController extends AbstractController
     public function membersPage()
     {
         return $this->render('team.html.twig');
+    }
+
+    /**
+     * @Route("/profile_rank", name="profile_rank")
+     */
+    public function profileRank()
+    {
+        $user = new User();
+        $form = $this->createForm(ProfileRankType::class, $user);
+        return $this->render('Connected/profile_rank.html.twig',array('form' => $form->createView()));
     }
 }

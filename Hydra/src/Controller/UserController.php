@@ -79,8 +79,6 @@ class UserController extends AbstractController
             $user->setPassword($encoded);
             $entityManager->persist($user);
             $entityManager->flush();
-            $session = $request->getSession();
-            $session->set('user', $user);
 
             return $this->render('index.html.twig');
         }
