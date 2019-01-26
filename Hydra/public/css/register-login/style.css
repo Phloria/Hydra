@@ -65,8 +65,8 @@
 }
 
 .bgprofile-rank-cs1 {
-  width: 40%;
-  height: 90%;
+  min-width: 40%;
+  min-height: 70%;
   position: center;
   margin: auto;
   padding-top: 20px;
@@ -141,14 +141,14 @@ form {
 form-wrapper2: writing in white
 ---------------------*/
 .form-wrapper2 {
-  width: 50%;
-  margin-bottom: 17px;
+  min-width: 30%;
+  margin: auto;
   color: #ffffff;}
 .form-wrapper2 label {
   margin-bottom: 9px;
   display: block; }
 .form-wrapper2:first-child {
-  margin-right: 20px; }
+  margin-right: 10px; }
 
 
 .form-control {

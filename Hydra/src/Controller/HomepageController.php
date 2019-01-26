@@ -85,7 +85,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/profile_rank", name="profile_rank")
+     * @Route("/profilerankpage", name="profile_rank_page")
      */
     public function profileRank()
     {

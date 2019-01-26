@@ -1,20 +1,27 @@
 {% extends "Header-Footer/header_connected.html.twig" %}
+{% if app.user.csgoActualRank == 1 %}
+    {% set CSGO = 'Unknown' %}
+{% elseif app.user.csgoActualRank == 2 %}
+    {% set CSGO = 'Silver 1' %}
+{% elseif app.user.csgoActualRank == 3 %}
+    {% set CSGO = 'Silver 2' %}
+{% endif %}
 {% block header %}
     <link rel="stylesheet" href="css/register-login/style.css"/>
 {% endblock %}
 {% block content %}
     <section class="recent-game-section set-bg" data-setbg="img/profile/Agarest-Sieghart.jpg">
         <div class="bgprofile">
-            <div class="bg-inside-profile innerprofile registration-text">
+            <div class="innerprofile registration-text">
                 <div class="tournament-item mb-4 mb-lg-4">
                     <h2 align="center" class="white">My Profile</h2><br>
                         <div class="ti-content">
                             <div class="ti-thumb set-bg" data-setbg="img/tournament/1.jpg"></div>
                             <div class="ti-text">
-                                <h4>Surname</h4>
+                                <h4>{{ app.user.username }}</h4>
                                 <ul>
-                                    <li><span>Joined since:</span> June 20, 2018</li>
-                                    <li><span>CSGO:</span> Global Elite</li>
+                                    <li><span>Joined since:</span> {{ app.user.joindate|date('Y-m-d') }}</li>
+                                    <li><span>CSGO:</span> {{ CSGO }}</li>
                                     <li><span>Overwatch:</span> Gold</li>
                                     <li><span>PUBG:</span> https://pubg.op.gg/user/lisac1</li>
                                 </ul>
@@ -24,10 +31,10 @@
                 </div>
                 <br><br>
                 <div class="size-btn user-panel-profile space-bottom" align="center">
-                    <a href="profile_rank">Games Infos</a>
+                    <a href="profilerankpage">Games Infos</a>
                 </div>
                 <div class="size-btn user-panel-profile" align="center">
-                    <a href="profile_rank">Change Password</a>
+                    <a href="">Change Password</a>
                 </div>
             </div>
         </div>

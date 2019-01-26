@@ -96,12 +96,12 @@ class User implements UserInterface, \Serializable
      * 19: The Global Elite
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $csgo_actual_rank;
+    private $csgoActualRank;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $csgo_best_rank;
+    private $csgoBestRank;
 
     /**
      * 1: None
@@ -115,17 +115,17 @@ class User implements UserInterface, \Serializable
      * 9: Top 500
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $ow_actual_rank;
+    private $owActualRank;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $ow_best_rank;
+    private $owBestRank;
 
     /**
      * @ORM\Column(type="string", nullable=true)
      */
-    private $pubg_link;
+    private $pubgLink;
 
     public function getSalt()
     {
@@ -317,15 +317,15 @@ class User implements UserInterface, \Serializable
      */
     public function getCsgoActualRank()
     {
-        return $this->csgo_actual_rank;
+        return $this->csgoActualRank;
     }
 
     /**
-     * @param mixed $csgo_actual_rank
+     * @param mixed $csgoActualRank
      */
-    public function setCsgoActualRank($csgo_actual_rank): void
+    public function setCsgoActualRank($csgoActualRank): void
     {
-        $this->csgo_actual_rank = $csgo_actual_rank;
+        $this->csgoActualRank = $csgoActualRank;
     }
 
     /**
@@ -333,15 +333,15 @@ class User implements UserInterface, \Serializable
      */
     public function getCsgoBestRank()
     {
-        return $this->csgo_best_rank;
+        return $this->csgoBestRank;
     }
 
     /**
-     * @param mixed $csgo_best_rank
+     * @param mixed $csgoBestRank
      */
-    public function setCsgoBestRank($csgo_best_rank): void
+    public function setCsgoBestRank($csgoBestRank): void
     {
-        $this->csgo_best_rank = $csgo_best_rank;
+        $this->csgoBestRank = $csgoBestRank;
     }
 
     /**
@@ -349,15 +349,15 @@ class User implements UserInterface, \Serializable
      */
     public function getOwActualRank()
     {
-        return $this->ow_actual_rank;
+        return $this->owActualRank;
     }
 
     /**
-     * @param mixed $ow_actual_rank
+     * @param mixed $owActualRank
      */
-    public function setOwActualRank($ow_actual_rank): void
+    public function setOwActualRank($owActualRank): void
     {
-        $this->ow_actual_rank = $ow_actual_rank;
+        $this->owActualRank = $owActualRank;
     }
 
     /**
@@ -365,15 +365,15 @@ class User implements UserInterface, \Serializable
      */
     public function getOwBestRank()
     {
-        return $this->ow_best_rank;
+        return $this->owBestRank;
     }
 
     /**
-     * @param mixed $ow_best_rank
+     * @param mixed $owBestRank
      */
-    public function setOwBestRank($ow_best_rank): void
+    public function setOwBestRank($owBestRank): void
     {
-        $this->ow_best_rank = $ow_best_rank;
+        $this->owBestRank = $owBestRank;
     }
 
     /**
@@ -381,15 +381,15 @@ class User implements UserInterface, \Serializable
      */
     public function getPubgLink()
     {
-        return $this->pubg_link;
+        return $this->pubgLink;
     }
 
     /**
-     * @param mixed $pubg_link
+     * @param mixed $pubgLink
      */
-    public function setPubgLink($pubg_link): void
+    public function setPubgLink($pubgLink): void
     {
-        $this->pubg_link = $pubg_link;
+        $this->pubgLink = $pubgLink;
     }
 
     /**
