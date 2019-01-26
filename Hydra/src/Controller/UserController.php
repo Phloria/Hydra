@@ -136,6 +136,5 @@ class UserController extends AbstractController
         } else {
             return $this->render('Disconnected/forget_password.html.twig', array('error' => 1));
         }
-
     }
 }

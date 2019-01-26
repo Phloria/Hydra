@@ -20,9 +20,10 @@ class ProfileController extends AbstractController
     /**
      * @Route("/profile_rank", name="profile_rank")
      */
-    public function register(Request $request)
+    public function profileRank(Request $request)
     {
-        //$user = new User();
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
         $form = $this->createForm(ProfileRankType::class, $user);
         $form->handleRequest($request);
 

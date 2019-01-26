@@ -8,18 +8,21 @@
             <div class="bg-inside-profile-rank-cs1 inner-profile-rank-cs1 registration-text">
                 <div class="centerprofile">
                     <div class="descriptionprofile">
-                        <h2>My Profile</h2><br><br>
-                        <div class="form-group">
-                            <div class="form-wrapper2">
-                                {{ form_row(form.birthdate, {'attr': {'class': 'form-control'}}) }}
+                        <form method="post" action="{{path('profile_rank')}}" class="home-form">
+                            {{ form_start(form) }}
+                            <h3>My Rank</h3><br><br>
+                            <div class="form-group">
+                                <div class="form-wrapper2">
+                                    {{ form_row(form.csgo_actual_rank, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                                <div class="form-wrapper2">
+                                    {{ form_row(form.csgo_best_rank, {'attr': {'class': 'form-control'}}) }}
+                                </div>
                             </div>
-                            <div class="form-wrapper2">
-                                {{ form_row(form.gender, {'attr': {'class': 'form-control'}}) }}
-                            </div>
-                        </div>
+                            <button type="submit">Register</button>
+                            {{ form_end(form) }}
+                        </form>
                     </div>
-                    <button href="profile_rank" class="size-btn">Games Infos</button>
-                    <button href="" class="size-btn">Change Password</button>
                 </div>
             </div>
         </div>
