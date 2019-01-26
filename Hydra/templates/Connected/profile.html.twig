@@ -3,34 +3,31 @@
     <link rel="stylesheet" href="css/register-login/style.css"/>
 {% endblock %}
 {% block content %}
-    <section class="set-bg" data-setbg="img/profile/Agarest-Sieghart.jpg">
+    <section class="recent-game-section set-bg" data-setbg="img/profile/Agarest-Sieghart.jpg">
         <div class="bgprofile">
             <div class="bg-inside-profile innerprofile registration-text">
-                <div class="centerprofile">
-                    <div class="descriptionprofile">
-                        <h2>My Profile</h2><br><br>
-                        <table border="0" align="center">
-                            <tr>
-                                <th>
-                                    <img src="img/authors/4.jpg" class="imgprofile">
-                                </th>
-                                <th>
-                                    <div class="container">
-                                        <p>Surname <br> Joined since ____________ <br>
-                                            CSGO : ____________ Overwatch : __________ <br>
-                                            PUBG : ______________________</p>
-                                    </div>
-                                </th>
-                            </tr>
-                        </table>
-                        <br><br>
-                        <div class="size-btn user-panel-profile space-bottom" align="center">
-                            <a href="profile_rank">Games Infos</a>
+                <div class="tournament-item mb-4 mb-lg-4">
+                    <h2 align="center" class="white">My Profile</h2><br>
+                        <div class="ti-content">
+                            <div class="ti-thumb set-bg" data-setbg="img/tournament/1.jpg"></div>
+                            <div class="ti-text">
+                                <h4>Surname</h4>
+                                <ul>
+                                    <li><span>Joined since:</span> June 20, 2018</li>
+                                    <li><span>CSGO:</span> Global Elite</li>
+                                    <li><span>Overwatch:</span> Gold</li>
+                                    <li><span>PUBG:</span> https://pubg.op.gg/user/lisac1</li>
+                                </ul>
+                                <p><span>Tournaments participated:</span> 0 </p>
+                            </div>
                         </div>
-                        <div class="size-btn user-panel-profile" align="center">
-                            <a href="profile_rank">Change Password</a>
-                        </div>
-                    </div>
+                </div>
+                <br><br>
+                <div class="size-btn user-panel-profile space-bottom" align="center">
+                    <a href="profile_rank">Games Infos</a>
+                </div>
+                <div class="size-btn user-panel-profile" align="center">
+                    <a href="profile_rank">Change Password</a>
                 </div>
             </div>
         </div>

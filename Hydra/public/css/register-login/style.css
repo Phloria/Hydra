@@ -48,19 +48,20 @@
 .innerprofile {
   min-height: 100px;
   margin: auto;
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 170px;
   background: url(".");
 }
 
 .bgprofile {
-  width: 36%;
-  height: 90%;
+  min-width: 36%;
+  width: 400px;
   position: center;
   margin: auto;
   background: rgba(250, 250, 250, 0);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #252525;
 }
 
 .bgprofile-rank-cs1 {
@@ -72,38 +73,12 @@
   padding-bottom: 20px;
 }
 
-.bg-inside-profile {
-  width: 100%;
-  height: 100%;
-  align-self: center;
-  position: center;
-  margin: auto;
-  background: rgba(250, 250, 250, 1);
-}
-
-.bg-inside-profile-rank-cs1 {
-  width: 100%;
-  height: 100%;
-  align-self: center;
-  position: center;
-  margin: auto;
-}
-
 .centerprofile{
   min-width: 500px;
-  max-width: 700px;
   margin: auto;
   text-align: center;
   padding-bottom: 170px;
   background: url(".");
-}
-
-.descriptionprofile{
-  width: 90%;
-  height: 40%;
-  align-self: center;
-  position: center;
-  margin: auto;
 }
 
 .imgprofile {
@@ -261,4 +236,66 @@ button {
     display: none;
     content: '\f26b'; }
 
-/*# sourceMappingURL=style.css.map */
+
+.tournament-item {
+  background: #252525;
+}
+
+.tournament-item .ti-notic {
+  display: inline-block;
+  padding: 8px 21px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #131313;
+  text-transform: uppercase;
+  background: #ffb320;
+}
+
+.tournament-item .ti-content {
+  padding: 38px 24px;
+  overflow: hidden;
+}
+
+.tournament-item .ti-thumb {
+  width: 168px;
+  height: 178px;
+  float: left;
+}
+
+.tournament-item .ti-text {
+  padding-left: 195px;
+}
+
+.tournament-item .ti-text h4 {
+  color: #ffb320;
+  margin-bottom: 12px;
+}
+
+.tournament-item .ti-text ul {
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+.tournament-item .ti-text ul li {
+  color: #fff;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.tournament-item .ti-text ul li span {
+  color: #9a9a9a;
+}
+
+.tournament-item .ti-text p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.tournament-item .ti-text p span {
+  font-weight: 500;
+  color: #ffb320;
+}
+
+.white {
+  color: #ffffff;
+}
