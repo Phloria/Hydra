@@ -10,7 +10,15 @@
                     <div class="descriptionprofile">
                         <form method="post" action="{{path('profile_rank')}}" class="home-form">
                             {{ form_start(form) }}
-                            <h3>My Rank</h3><br><br>
+                            <br><br><h2 class="white">My Rank</h2><br>
+                            {% for message in app.flashes('notice') %}
+                                <div align="center" class="white">
+                                    {{ message }}
+                                </div>
+                            {% else %}
+                                <br>
+                            {% endfor %}
+                            <br><br>
                             <div class="form-group">
                                 <div class="form-wrapper2">
                                     {{ form_row(form.csgoActualRank, {'attr': {'class': 'form-control'}}) }}

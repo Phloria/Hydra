@@ -28,19 +28,18 @@ class ProfileController extends AbstractController
         $form = $this->createForm(ProfileRankType::class, $userfake);
         $form->handleRequest($request);
 
+        //Si il n'y a eu aucun changement
         if ((!$userfake->getCsgoActualRank() || $user->getCsgoActualRank() == $userfake->getCsgoActualRank()) &&
             (!$userfake->getCsgoBestRank() || $user->getCsgoBestRank() == $userfake->getCsgoBestRank()) &&
             (!$userfake->getOwActualRank() || $user->getOwActualRank() == $userfake->getOwActualRank()) &&
             (!$userfake->getOwBestRank() || $user->getOwBestRank() == $userfake->getOwBestRank()) &&
             !$userfake->getPubgLink() || $user->getPubgLink() == $userfake->getPubgLink())
         {
-            $this->addFlash(
-                'notice',
-                "Nothing to change!"
-            );
+            $this->addFlash('notice',"Nothing to change!");
             return $this->render('Connected/profile.html.twig');
         }
 
+        //Si le choix etait a "--" alors rien a changer
         if ($userfake->getCsgoActualRank())
             $user->setCsgoActualRank($userfake->getCsgoActualRank());
         if ($userfake->getCsgoBestRank())
@@ -52,10 +51,13 @@ class ProfileController extends AbstractController
         if ($userfake->getPubgLink())
             $user->setPubgLink($userfake->getPubgLink());
 
+        //Si le niveau actuel est > au Best rank, ce n'est pas normal
         if ($user->getCsgoActualRank() > $user->getCsgoBestRank()){
+            $this->addFlash('notice',"CSGO: Your best rank cannot be lower than your actual rank (or be None)!");
             return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 1));
         }
         if ($user->getOwActualRank() > $user->getOwBestRank()){
+            $this->addFlash('notice',"Overwatch: Your best rank cannot be lower than your actual rank (or be None)");
             return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 2));
         }
 
@@ -67,12 +69,10 @@ class ProfileController extends AbstractController
             $entityManager->flush();
             $session = $request->getSession();
             $session->set('user', $user);
-            $this->addFlash(
-                'notice',
-                'Your changes were saved!'
-            );
+            $this->addFlash('notice', 'Your changes were saved!');
             return $this->render('Connected/profile.html.twig');
         }
+        $this->addFlash('notice', 'An unknown error has occurred!');
         return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 3));
     }
 }
