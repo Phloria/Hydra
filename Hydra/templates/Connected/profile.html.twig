@@ -1,4 +1,5 @@
 {% extends "Header-Footer/header_connected.html.twig" %}
+{% set CSGO = 'Unknown' %}
 {% if app.user.csgoActualRank == 1 %}
     {% set CSGO = 'Unknown' %}
 {% elseif app.user.csgoActualRank == 2 %}
@@ -7,6 +8,7 @@
     {% set CSGO = 'Silver 2' %}
 {% endif %}
 
+{% set OW = 'Unknown' %}
 {% if app.user.owActualRank == 1 %}
     {% set OW = 'Unknown' %}
 {% elseif app.user.owActualRank == 2 %}

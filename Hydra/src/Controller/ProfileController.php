@@ -23,9 +23,19 @@ class ProfileController extends AbstractController
     public function profileRank(Request $request)
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $userfake = new User();
         $user = $this->getUser();
-        $form = $this->createForm(ProfileRankType::class, $user);
+        $form = $this->createForm(ProfileRankType::class, $userfake);
         $form->handleRequest($request);
+
+        if ($userfake->getCsgoActualRank() != 1)
+            $user->setCsgoActualRank($userfake->getCsgoActualRank());
+        if ($userfake->getCsgoBestRank() != 1)
+            $user->setCsgoBestRank($userfake->getCsgoBestRank());
+        if ($userfake->getOwActualRank() != 1)
+            $user->setOwActualRank($userfake->getOwActualRank());
+        if ($userfake->getOwBestRank() != 1)
+            $user->setOwBestRank($userfake->getOwBestRank());
 
         if ($user->getCsgoActualRank() > $user->getCsgoBestRank()){
             return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 1));

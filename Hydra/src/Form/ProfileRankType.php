@@ -33,6 +33,21 @@ class ProfileRankType extends AbstractType
                     'Silver 2' => 3,
                 ],
             ])
+            ->add('owActualRank',ChoiceType::class, [
+                'choices'  => [
+                    'None/Unknown' => 1,
+                    'Bronze' => 2,
+                    'Silver' => 3,
+                ],
+            ])
+            ->add('owBestRank',ChoiceType::class, [
+                'choices'  => [
+                    'None/Unknown' => 1,
+                    'Bronze' => 2,
+                    'Silver' => 3,
+                ],
+            ])
+            ->add('pubgLink',TextType::class, array('required'   => false))
         ;
     }
 
