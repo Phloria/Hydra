@@ -1,19 +1,23 @@
 {% extends "Header-Footer/header_connected.html.twig" %}
 {% set CSGO = 'Unknown' %}
 {% if app.user.csgoActualRank == 1 %}
-    {% set CSGO = 'Unknown' %}
+    {% set CSGO = 'Never Played' %}
 {% elseif app.user.csgoActualRank == 2 %}
-    {% set CSGO = 'Silver 1' %}
+    {% set CSGO = 'Unranked' %}
 {% elseif app.user.csgoActualRank == 3 %}
+    {% set CSGO = 'Silver 1' %}
+{% elseif app.user.csgoActualRank == 4 %}
     {% set CSGO = 'Silver 2' %}
 {% endif %}
 
 {% set OW = 'Unknown' %}
 {% if app.user.owActualRank == 1 %}
-    {% set OW = 'Unknown' %}
+    {% set OW = 'Never Played' %}
 {% elseif app.user.owActualRank == 2 %}
-    {% set OW = 'Bronze' %}
+    {% set OW = 'Unranked' %}
 {% elseif app.user.owActualRank == 3 %}
+    {% set OW = 'Bronze' %}
+{% elseif app.user.owActualRank == 4 %}
     {% set OW = 'Silver' %}
 {% endif %}
 

@@ -75,26 +75,27 @@ class User implements UserInterface, \Serializable
     private $role;
 
     /**
-     * 0: Never Played
-     * 1: Unranked
-     * 2: Silver 1
-     * 3: Silver 2
-     * 4: Silver 3
-     * 5: Silver 4
-     * 6: Silver Elite
-     * 7: Silver Elite Master
-     * 8: Nova 1
-     * 9: Nova 2
-     * 10: Nova 3
-     * 11: Nova Master
-     * 12: Master Guardian
-     * 13: Master Guardian 2
-     * 14: Master Guardian Elite
-     * 15: Distinguished Master Guardian
-     * 16: Legendary Eagle
-     * 17: Legendary Eagle Master
-     * 18: Supreme Master First Class
-     * 19: The Global Elite
+     * 0: ---- (asking to not change the previous status)
+     * 1: Never Played
+     * 2: Unranked
+     * 3: Silver 1
+     * 4: Silver 2
+     * 5: Silver 3
+     * 6: Silver 4
+     * 7: Silver Elite
+     * 8: Silver Elite Master
+     * 9: Nova 1
+     * 10: Nova 2
+     * 11: Nova 3
+     * 12: Nova Master
+     * 13: Master Guardian
+     * 14: Master Guardian 2
+     * 15: Master Guardian Elite
+     * 16: Distinguished Master Guardian
+     * 17: Legendary Eagle
+     * 18: Legendary Eagle Master
+     * 19: Supreme Master First Class
+     * 20: The Global Elite
      * @ORM\Column(type="integer", nullable=true)
      */
     private $csgoActualRank;
@@ -105,16 +106,17 @@ class User implements UserInterface, \Serializable
     private $csgoBestRank;
 
     /**
-     * 0: Never Played
-     * 1: Unranked
-     * 2: Bronze
-     * 3: Silver
-     * 4: Gold
-     * 5: Platinum
-     * 6: Diamond
-     * 7: Master
-     * 8: GrandMaster
-     * 9: Top 500
+     * 0: ---- (asking to not change the previous status)
+     * 1: Never Played
+     * 2: Unranked
+     * 3: Bronze
+     * 4: Silver
+     * 5: Gold
+     * 6: Platinum
+     * 7: Diamond
+     * 8: Master
+     * 9: GrandMaster
+     * 10: Top 500
      * @ORM\Column(type="integer", nullable=true)
      */
     private $owActualRank;
