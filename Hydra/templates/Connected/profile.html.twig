@@ -30,12 +30,20 @@
     <link rel="stylesheet" href="css/register-login/style.css"/>
 {% endblock %}
 {% block content %}
+
     <section class="recent-game-section set-bg" data-setbg="img/profile/Agarest-Sieghart.jpg">
         <div class="bgprofile">
             <div class="innerprofile registration-text">
                 <div class="tournament-item mb-4 mb-lg-4">
                     <h2 align="center" class="white">My Profile</h2><br>
-                        <div class="ti-content">
+                    {% for message in app.flashes('notice') %}
+                        <div align="center" class="white">
+                            {{ message }}
+                        </div>
+                    {% else %}
+                        <br>
+                    {% endfor %}
+                    <div class="ti-content">
                             <div class="ti-thumb set-bg" data-setbg="img/tournament/1.jpg"></div>
                             <div class="ti-text">
                                 <h4>{{ app.user.username }}</h4>

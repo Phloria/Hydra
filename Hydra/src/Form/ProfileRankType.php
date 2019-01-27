@@ -31,7 +31,7 @@ class ProfileRankType extends AbstractType
             ->add('csgoBestRank',ChoiceType::class, [
                 'choices'  => [
                     '-----' => 0,
-                    'None' => 1,
+                    'None' => 2,
                     'Silver 1' => 3,
                     'Silver 2' => 4,
                 ],
@@ -48,7 +48,7 @@ class ProfileRankType extends AbstractType
             ->add('owBestRank',ChoiceType::class, [
                 'choices'  => [
                     '-----' => 0,
-                    'None' => 1,
+                    'None' => 2,
                     'Bronze' => 3,
                     'Silver' => 4,
                 ],

@@ -28,6 +28,19 @@ class ProfileController extends AbstractController
         $form = $this->createForm(ProfileRankType::class, $userfake);
         $form->handleRequest($request);
 
+        if ((!$userfake->getCsgoActualRank() || $user->getCsgoActualRank() == $userfake->getCsgoActualRank()) &&
+            (!$userfake->getCsgoBestRank() || $user->getCsgoBestRank() == $userfake->getCsgoBestRank()) &&
+            (!$userfake->getOwActualRank() || $user->getOwActualRank() == $userfake->getOwActualRank()) &&
+            (!$userfake->getOwBestRank() || $user->getOwBestRank() == $userfake->getOwBestRank()) &&
+            !$userfake->getPubgLink() || $user->getPubgLink() == $userfake->getPubgLink())
+        {
+            $this->addFlash(
+                'notice',
+                "Nothing to change!"
+            );
+            return $this->render('Connected/profile.html.twig');
+        }
+
         if ($userfake->getCsgoActualRank())
             $user->setCsgoActualRank($userfake->getCsgoActualRank());
         if ($userfake->getCsgoBestRank())
@@ -54,7 +67,10 @@ class ProfileController extends AbstractController
             $entityManager->flush();
             $session = $request->getSession();
             $session->set('user', $user);
-
+            $this->addFlash(
+                'notice',
+                'Your changes were saved!'
+            );
             return $this->render('Connected/profile.html.twig');
         }
         return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 3));

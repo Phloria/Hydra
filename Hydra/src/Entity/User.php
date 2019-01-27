@@ -77,7 +77,7 @@ class User implements UserInterface, \Serializable
     /**
      * 0: ---- (asking to not change the previous status)
      * 1: Never Played
-     * 2: Unranked
+     * 2: Unranked/None
      * 3: Silver 1
      * 4: Silver 2
      * 5: Silver 3
@@ -108,7 +108,7 @@ class User implements UserInterface, \Serializable
     /**
      * 0: ---- (asking to not change the previous status)
      * 1: Never Played
-     * 2: Unranked
+     * 2: Unranked/None
      * 3: Bronze
      * 4: Silver
      * 5: Gold
