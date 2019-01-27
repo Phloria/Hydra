@@ -41,10 +41,10 @@ class RegisterType extends AbstractType
                     'Woman' => 'Woman',
                 ],
             ])
-            ->add('csgoActualRank', HiddenType::class, ['data' => 1])
-            ->add('csgoBestRank', HiddenType::class, ['data' => 1])
-            ->add('owActualRank', HiddenType::class, ['data' => 1])
-            ->add('owBestRank', HiddenType::class, ['data' => 1])
+            ->add('csgoActualRank', HiddenType::class, ['data' => 0])
+            ->add('csgoBestRank', HiddenType::class, ['data' => 0])
+            ->add('owActualRank', HiddenType::class, ['data' => 0])
+            ->add('owBestRank', HiddenType::class, ['data' => 0])
         ;
     }
 

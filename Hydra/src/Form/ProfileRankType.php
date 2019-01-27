@@ -21,28 +21,30 @@ class ProfileRankType extends AbstractType
         $builder
             ->add('csgoActualRank',ChoiceType::class, [
                 'choices'  => [
-                    'None/Unknown' => 1,
+                    'Never Played' => 0,
+                    'Unranked' => 1,
                     'Silver 1' => 2,
                     'Silver 2' => 3,
                 ],
             ])
             ->add('csgoBestRank',ChoiceType::class, [
                 'choices'  => [
-                    'None/Unknown' => 1,
+                    'Never Played' => 0,
                     'Silver 1' => 2,
                     'Silver 2' => 3,
                 ],
             ])
             ->add('owActualRank',ChoiceType::class, [
                 'choices'  => [
-                    'None/Unknown' => 1,
+                    'Never Played' => 0,
+                    'Unranked' => 1,
                     'Bronze' => 2,
                     'Silver' => 3,
                 ],
             ])
             ->add('owBestRank',ChoiceType::class, [
                 'choices'  => [
-                    'None/Unknown' => 1,
+                    'Never Played' => 0,
                     'Bronze' => 2,
                     'Silver' => 3,
                 ],

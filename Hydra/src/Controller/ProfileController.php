@@ -28,13 +28,13 @@ class ProfileController extends AbstractController
         $form = $this->createForm(ProfileRankType::class, $userfake);
         $form->handleRequest($request);
 
-        if ($userfake->getCsgoActualRank() != 1)
+        if ($userfake->getCsgoActualRank())
             $user->setCsgoActualRank($userfake->getCsgoActualRank());
-        if ($userfake->getCsgoBestRank() != 1)
+        if ($userfake->getCsgoBestRank())
             $user->setCsgoBestRank($userfake->getCsgoBestRank());
-        if ($userfake->getOwActualRank() != 1)
+        if ($userfake->getOwActualRank())
             $user->setOwActualRank($userfake->getOwActualRank());
-        if ($userfake->getOwBestRank() != 1)
+        if ($userfake->getOwBestRank())
             $user->setOwBestRank($userfake->getOwBestRank());
 
         if ($user->getCsgoActualRank() > $user->getCsgoBestRank()){

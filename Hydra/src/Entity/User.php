@@ -75,7 +75,8 @@ class User implements UserInterface, \Serializable
     private $role;
 
     /**
-     * 1: None
+     * 0: Never Played
+     * 1: Unranked
      * 2: Silver 1
      * 3: Silver 2
      * 4: Silver 3
@@ -104,7 +105,8 @@ class User implements UserInterface, \Serializable
     private $csgoBestRank;
 
     /**
-     * 1: None
+     * 0: Never Played
+     * 1: Unranked
      * 2: Bronze
      * 3: Silver
      * 4: Gold
