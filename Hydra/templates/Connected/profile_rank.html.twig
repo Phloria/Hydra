@@ -13,10 +13,18 @@
                             <h3>My Rank</h3><br><br>
                             <div class="form-group">
                                 <div class="form-wrapper2">
-                                    {{ form_row(form.csgo_actual_rank, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_row(form.csgoActualRank, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                                 <div class="form-wrapper2">
-                                    {{ form_row(form.csgo_best_rank, {'attr': {'class': 'form-control'}}) }}
+                                    {{ form_row(form.csgoBestRank, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-wrapper2">
+                                    {{ form_row(form.csgoActualRank, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                                <div class="form-wrapper2">
+                                    {{ form_row(form.csgoBestRank, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
                             <button type="submit">Register</button>

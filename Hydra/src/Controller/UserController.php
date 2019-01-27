@@ -80,7 +80,7 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->render('index.html.twig');
+            return $this->render('Disconnected/login.html.twig');
         }
         return $this->render('Disconnected/register.html.twig', array('form' => $form->createView(),'error' => 1));
     }

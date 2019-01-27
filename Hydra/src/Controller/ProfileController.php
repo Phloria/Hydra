@@ -27,6 +27,13 @@ class ProfileController extends AbstractController
         $form = $this->createForm(ProfileRankType::class, $user);
         $form->handleRequest($request);
 
+        if ($user->getCsgoActualRank() > $user->getCsgoBestRank()){
+            return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 1));
+        }
+        if ($user->getOwActualRank() > $user->getOwBestRank()){
+            return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 2));
+        }
+
         $entityManager = $this->getDoctrine()->getManager();
 
         if ($form->isSubmitted() && $form->isValid())
@@ -38,6 +45,6 @@ class ProfileController extends AbstractController
 
             return $this->render('Connected/profile.html.twig');
         }
-        return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 1));
+        return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 3));
     }
 }

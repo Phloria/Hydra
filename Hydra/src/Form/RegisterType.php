@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -39,7 +40,12 @@ class RegisterType extends AbstractType
                     'Man' => 'Man',
                     'Woman' => 'Woman',
                 ],
-            ]);
+            ])
+            ->add('csgoActualRank', HiddenType::class, ['data' => 1])
+            ->add('csgoBestRank', HiddenType::class, ['data' => 1])
+            ->add('owActualRank', HiddenType::class, ['data' => 1])
+            ->add('owBestRank', HiddenType::class, ['data' => 1])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

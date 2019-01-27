@@ -6,6 +6,15 @@
 {% elseif app.user.csgoActualRank == 3 %}
     {% set CSGO = 'Silver 2' %}
 {% endif %}
+
+{% if app.user.owActualRank == 1 %}
+    {% set OW = 'Unknown' %}
+{% elseif app.user.owActualRank == 2 %}
+    {% set OW = 'Bronze' %}
+{% elseif app.user.owActualRank == 3 %}
+    {% set OW = 'Silver' %}
+{% endif %}
+
 {% block header %}
     <link rel="stylesheet" href="css/register-login/style.css"/>
 {% endblock %}
@@ -21,8 +30,8 @@
                                 <h4>{{ app.user.username }}</h4>
                                 <ul>
                                     <li><span>Joined since:</span> {{ app.user.joindate|date('Y-m-d') }}</li>
-                                    <li><span>CSGO:</span> {{ CSGO }}</li>
-                                    <li><span>Overwatch:</span> Gold</li>
+                                    <li><span>CSGO:</span> {{ CSGO }} </li>
+                                    <li><span>Overwatch:</span> {{ OW }} </li>
                                     <li><span>PUBG:</span> https://pubg.op.gg/user/lisac1</li>
                                 </ul>
                                 <p><span>Tournaments participated:</span> 0 </p>

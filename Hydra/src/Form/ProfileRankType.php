@@ -19,14 +19,14 @@ class ProfileRankType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('csgo_actual_rank',ChoiceType::class, [
+            ->add('csgoActualRank',ChoiceType::class, [
                 'choices'  => [
                     'None/Unknown' => 1,
                     'Silver 1' => 2,
                     'Silver 2' => 3,
                 ],
             ])
-            ->add('csgo_best_rank',ChoiceType::class, [
+            ->add('csgoBestRank',ChoiceType::class, [
                 'choices'  => [
                     'None/Unknown' => 1,
                     'Silver 1' => 2,
