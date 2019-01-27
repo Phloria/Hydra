@@ -81,6 +81,15 @@
   background: url(".");
 }
 
+.centerprofilepassword{
+  min-width: 500px;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 170px;
+  background: url(".");
+}
+
 .imgprofile {
   width: 150px;
   height: 150px;
@@ -143,7 +152,8 @@ form-wrapper2: writing in white
 .form-wrapper2 {
   min-width: 30%;
   margin: auto;
-  color: #ffffff;}
+  color: #ffffff;
+  margin-bottom: 9px;}
 .form-wrapper2 label {
   margin-bottom: 9px;
   display: block; }

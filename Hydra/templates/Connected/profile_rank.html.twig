@@ -7,41 +7,39 @@
         <div class="bgprofile-rank-cs1">
             <div class="inner-profile-rank-cs1 registration-text">
                 <div class="centerprofile">
-                    <div class="descriptionprofile">
-                        <form method="post" action="{{path('profile_rank')}}" class="home-form">
-                            {{ form_start(form) }}
-                            <br><br><h2 class="white">My Rank</h2><br>
-                            {% for message in app.flashes('notice') %}
-                                <div align="center" class="white">
-                                    {{ message }}
-                                </div>
-                            {% else %}
-                                <br>
-                            {% endfor %}
-                            <br><br>
-                            <div class="form-group">
-                                <div class="form-wrapper2">
-                                    {{ form_row(form.csgoActualRank, {'attr': {'class': 'form-control'}}) }}
-                                </div>
-                                <div class="form-wrapper2">
-                                    {{ form_row(form.csgoBestRank, {'attr': {'class': 'form-control'}}) }}
-                                </div>
-                            </div><br>
-                            <div class="form-group">
-                                <div class="form-wrapper2">
-                                    {{ form_row(form.owActualRank, {'attr': {'class': 'form-control'}}) }}
-                                </div>
-                                <div class="form-wrapper2">
-                                    {{ form_row(form.owBestRank, {'attr': {'class': 'form-control'}}) }}
-                                </div>
-                            </div><br>
+                    <form method="post" action="{{path('profile_rank')}}" class="home-form">
+                        {{ form_start(form) }}
+                        <br><br><h2 class="white">My Rank</h2><br>
+                        {% for message in app.flashes('notice') %}
+                            <div align="center" class="white">
+                                {{ message }}
+                            </div>
+                        {% else %}
+                            <br>
+                        {% endfor %}
+                        <br><br>
+                        <div class="form-group">
                             <div class="form-wrapper2">
-                                {{ form_row(form.pubgLink, {'label': 'Ingame name of PUBG','attr': {'class': 'small-form-control'}}) }}
-                            </div><br>
-                            <button type="submit">Update</button>
-                            {{ form_end(form) }}
-                        </form>
-                    </div>
+                                {{ form_row(form.csgoActualRank, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-wrapper2">
+                                {{ form_row(form.csgoBestRank, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div><br>
+                        <div class="form-group">
+                            <div class="form-wrapper2">
+                                {{ form_row(form.owActualRank, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-wrapper2">
+                                {{ form_row(form.owBestRank, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div><br>
+                        <div class="form-wrapper2">
+                            {{ form_row(form.pubgLink, {'label': 'Ingame name of PUBG','attr': {'class': 'small-form-control'}}) }}
+                        </div><br>
+                        <button type="submit">Update</button>
+                        {{ form_end(form) }}
+                    </form>
                 </div>
             </div>
         </div>

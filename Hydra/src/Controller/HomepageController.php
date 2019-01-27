@@ -65,7 +65,7 @@ class HomepageController extends AbstractController
      */
     public function profilePage()
     {
-        return $this->render('Connected/profile.html.twig', array('error' => 0));
+        return $this->render('Connected/profile.html.twig');
     }
 
     /**
@@ -92,5 +92,13 @@ class HomepageController extends AbstractController
         $user = new User();
         $form = $this->createForm(ProfileRankType::class, $user);
         return $this->render('Connected/profile_rank.html.twig',array('form' => $form->createView()));
+    }
+
+    /**
+     * @Route("/profilepasswordpage", name="profile_password_page")
+     */
+    public function profilePasswordPage()
+    {
+        return $this->render('Connected/profile_password.html.twig');
     }
 }
