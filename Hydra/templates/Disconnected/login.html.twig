@@ -14,19 +14,19 @@
 
 					<h3>Connection</h3>
 
-					<div class="form-wrapper">
+					<div class="form-wrapper-login">
 						<label for="inputUsername">Username</label>
-						<input type="text" value="{{ last_username }}" id="inputUsername" name="username" class='form-control' required autofocus>
+						<input type="text" value="{{ last_username }}" id="inputUsername" name="username" class='login-control' required autofocus>
 					</div>
 
-					<div class="form-wrapper">
+					<div class="form-wrapper-login">
 						<label for="inputPassword">Password</label>
-						<input type="password" id="inputPassword" name="password" class='form-control' required>
+						<input type="password" id="inputPassword" name="password" class='login-control' required>
 					</div>
 
 					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-					<div class="checkbox mb-3">
+					<div class="form-wrapper-login checkbox mb-3">
 						<label>
 							<input type="checkbox" name="_remember_me"> Remember me
 						</label>

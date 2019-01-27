@@ -36,6 +36,8 @@ class ProfileController extends AbstractController
             $user->setOwActualRank($userfake->getOwActualRank());
         if ($userfake->getOwBestRank())
             $user->setOwBestRank($userfake->getOwBestRank());
+        if ($userfake->getPubgLink())
+            $user->setPubgLink($userfake->getPubgLink());
 
         if ($user->getCsgoActualRank() > $user->getCsgoBestRank()){
             return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 1));

@@ -17,6 +17,11 @@
     {% set OW = 'Silver' %}
 {% endif %}
 
+{% set PUBG = 'None' %}
+{% if app.user.pubgLink %}
+    {% set PUBG = "https://pubg.op.gg/user/" ~ app.user.pubgLink %}
+{% endif %}
+
 {% block header %}
     <link rel="stylesheet" href="css/register-login/style.css"/>
 {% endblock %}
@@ -34,9 +39,9 @@
                                     <li><span>Joined since:</span> {{ app.user.joindate|date('Y-m-d') }}</li>
                                     <li><span>CSGO:</span> {{ CSGO }} </li>
                                     <li><span>Overwatch:</span> {{ OW }} </li>
-                                    <li><span>PUBG:</span> https://pubg.op.gg/user/lisac1</li>
+                                    <li><span>PUBG:</span> <a href="{{ PUBG }}" target="_blank" class="profile-panel">{{ PUBG }}</a></li>
                                 </ul>
-                                <p><span>Tournaments participated:</span> 0 </p>
+                                <p><span>Tournaments participated:</span> 0 (Not used for now) </p>
                             </div>
                         </div>
                 </div>

@@ -150,6 +150,24 @@ form-wrapper2: writing in white
 .form-wrapper2:first-child {
   margin-right: 10px; }
 
+.form-wrapper-login {
+  min-width: 30%;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 10px}
+.form-wrapper2-login label {
+  margin-bottom: 9px;
+  display: block; }
+
+.login-control {
+  border: 2px solid #ccc;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 20px;
+  font-family: "Muli-Bold";
+  background: #ebebeb; }
 
 .form-control {
   border: 2px solid #ccc;
@@ -159,7 +177,7 @@ form-wrapper2: writing in white
   padding: 0 20px;
   border-radius: 20px;
   font-family: "Muli-Bold";
-  background: none; }
+  background: #ebebeb; }
   .form-control:focus {
     border: 1px solid #ae3c33; }
 
@@ -172,7 +190,7 @@ form-wrapper2: writing in white
   padding: 0 20px;
   border-radius: 20px;
   font-family: "Muli-Bold";
-  background: none; }
+  background: #ebebeb; }
 .form-control:focus {
   border: 1px solid #ae3c33; }
 
@@ -311,4 +329,14 @@ button {
 
 .white {
   color: #ffffff;
+}
+
+.profile-panel {
+  color: #ffffff;
+
+}
+
+.profile-panel a {
+  font-size: 14px;
+  color: #131313;
 }
