@@ -114,7 +114,7 @@ class UserController extends AbstractController
     /**
      * @Route("/forgetpassword", name="forget_password")
      */
-    public function forgetPassword(Request $request, \Swift_Mailer $mailer)
+    public function forgetPassword(Request $request, \Swift_Mailer $mailer, UserPasswordEncoderInterface $encoder)
     {
         $username = $request->get('_username');
         $entityManager = $this->getDoctrine()->getManager();
@@ -127,14 +127,17 @@ class UserController extends AbstractController
             $user = $user_mail;
         if ($user)
         {
-            $newpassword = $this->generateRandomString();
-            $user[0]->setPassword($newpassword);
+            $password = $this->generateRandomString();
+            $encoded = $encoder->encodePassword($user[0], $password);
+            $user[0]->setPassword($encoded);
             $entityManager->persist($user[0]);
             $entityManager->flush();
-            $this->mailRandomPassword($mailer, $user[0]->getEmail(), $user[0]->getFirstName(), $user[0]->getPassword());
-            return $this->render('index.html.twig');
+            $this->mailRandomPassword($mailer, $user[0]->getEmail(), $user[0]->getFirstName(), $password);
+            $this->addFlash('notice', 'A mail has been sent with a new password!');
+            return $this->render('Disconnected/login.html.twig', array("last_username" => $user[0]->getUsername()));
         } else {
-            return $this->render('Disconnected/forget_password.html.twig', array('error' => 1));
+            $this->addFlash('error', 'This Username or Email doesn\'t exist!');
+            return $this->render('Disconnected/forget_password.html.twig');
         }
     }
 }

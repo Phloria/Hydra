@@ -54,12 +54,12 @@ class ProfileController extends AbstractController
 
         //Si le niveau actuel est > au Best rank, ce n'est pas normal
         if ($user->getCsgoActualRank() > $user->getCsgoBestRank()){
-            $this->addFlash('notice',"CSGO: Your best rank cannot be lower than your actual rank (or be None)!");
-            return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 1));
+            $this->addFlash('error',"CSGO: Your best rank cannot be lower than your actual rank (or be None)!");
+            return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView()));
         }
         if ($user->getOwActualRank() > $user->getOwBestRank()){
-            $this->addFlash('notice',"Overwatch: Your best rank cannot be lower than your actual rank (or be None)");
-            return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 2));
+            $this->addFlash('error',"Overwatch: Your best rank cannot be lower than your actual rank (or be None)");
+            return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView()));
         }
 
         $entityManager = $this->getDoctrine()->getManager();
@@ -73,8 +73,8 @@ class ProfileController extends AbstractController
             $this->addFlash('notice', 'Your changes were saved!');
             return $this->render('Connected/profile.html.twig');
         }
-        $this->addFlash('notice', 'An unknown error has occurred!');
-        return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView(),'error' => 3));
+        $this->addFlash('error', 'An unknown error has occurred!');
+        return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView()));
     }
 
     public function mailChangePassword(\Swift_Mailer $mailer, $email, $firstName)

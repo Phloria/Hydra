@@ -10,7 +10,7 @@
                     <form method="post" action="{{path('profile_rank')}}" class="home-form">
                         {{ form_start(form) }}
                         <br><br><h2 class="white">My Rank</h2><br>
-                        {% for message in app.flashes('notice') %}
+                        {% for message in app.flashes('error') %}
                             <div align="center" class="white">
                                 {{ message }}
                             </div>

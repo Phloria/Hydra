@@ -1,4 +1,9 @@
 {% extends "Header-Footer/header_disconnected.html.twig" %}
+{% set last_username = "" %}
+{% if app.session.lastUsername is defined %}
+	{% set last_username = app.session.lastUsername %}
+{% endif %}
+
 {% block header %}
 	<link rel="stylesheet" href="css/register-login/style.css"/>
 {% endblock %}
@@ -11,7 +16,14 @@
 					{% if error %}
 						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 					{% endif %}
-
+					{% for message in app.flashes('notice') %}
+						<div align="center" class="black">
+							{{ message }}
+						</div>
+					{% else %}
+						<br>
+					{% endfor %}
+					<br>
 					<h3>Connection</h3>
 
 					<div class="form-wrapper-login">
