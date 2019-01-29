@@ -8,6 +8,38 @@
     {% set CSGO = 'Silver 1' %}
 {% elseif app.user.csgoActualRank == 4 %}
     {% set CSGO = 'Silver 2' %}
+{% elseif app.user.csgoActualRank == 5 %}
+    {% set CSGO = 'Silver 3' %}
+{% elseif app.user.csgoActualRank == 6 %}
+    {% set CSGO = 'Silver 4' %}
+{% elseif app.user.csgoActualRank == 7 %}
+    {% set CSGO = 'Silver Elite' %}
+{% elseif app.user.csgoActualRank == 8 %}
+    {% set CSGO = 'Silver Elite Master' %}
+{% elseif app.user.csgoActualRank == 9 %}
+    {% set CSGO = 'Nova 1' %}
+{% elseif app.user.csgoActualRank == 10 %}
+    {% set CSGO = 'Nova 2' %}
+{% elseif app.user.csgoActualRank == 11 %}
+    {% set CSGO = 'Nova 3' %}
+{% elseif app.user.csgoActualRank == 12 %}
+    {% set CSGO = 'Nova Master' %}
+{% elseif app.user.csgoActualRank == 13 %}
+    {% set CSGO = 'Master Guardian' %}
+{% elseif app.user.csgoActualRank == 14 %}
+    {% set CSGO = 'Master Guardian 2' %}
+{% elseif app.user.csgoActualRank == 15 %}
+    {% set CSGO = 'Master Guardian Elite' %}
+{% elseif app.user.csgoActualRank == 16 %}
+    {% set CSGO = 'Distinguished Master Guardian' %}
+{% elseif app.user.csgoActualRank == 17 %}
+    {% set CSGO = 'Legendary Eagle' %}
+{% elseif app.user.csgoActualRank == 18 %}
+    {% set CSGO = 'Legendary Eagle Master' %}
+{% elseif app.user.csgoActualRank == 19 %}
+    {% set CSGO = 'Supreme Master First Class' %}
+{% elseif app.user.csgoActualRank == 20 %}
+    {% set CSGO = 'The Global Elite' %}
 {% endif %}
 
 {% set OW = 'Unknown' %}
@@ -19,6 +51,18 @@
     {% set OW = 'Bronze' %}
 {% elseif app.user.owActualRank == 4 %}
     {% set OW = 'Silver' %}
+{% elseif app.user.owActualRank == 5 %}
+    {% set OW = 'Gold' %}
+{% elseif app.user.owActualRank == 6 %}
+    {% set OW = 'Platinum' %}
+{% elseif app.user.owActualRank == 7 %}
+    {% set OW = 'Diamond' %}
+{% elseif app.user.owActualRank == 8 %}
+    {% set OW = 'Master' %}
+{% elseif app.user.owActualRank == 9 %}
+    {% set OW = 'GrandMaster' %}
+{% elseif app.user.owActualRank == 10 %}
+    {% set OW = 'Top 500' %}
 {% endif %}
 
 {% set PUBG = 'None' %}
