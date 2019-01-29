@@ -1,5 +1,7 @@
 {% extends "Header-Footer/header_disconnected.html.twig" %}
-{% set last_username = "" %}
+{% if last_username is not defined %}
+	{% set last_username = "" %}
+{% endif %}
 {% if app.session.lastUsername is defined %}
 	{% set last_username = app.session.lastUsername %}
 {% endif %}

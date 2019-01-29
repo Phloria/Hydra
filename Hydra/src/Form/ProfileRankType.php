@@ -26,6 +26,10 @@ class ProfileRankType extends AbstractType
                     'Unranked' => 2,
                     'Silver 1' => 3,
                     'Silver 2' => 4,
+                    'Silver 3' => 5,
+                    'Silver 4' => 6,
+                    'Silver Silver Elite' => 7,
+                    'Silver Elite Master' => 8,
                 ],
             ])
             ->add('csgoBestRank',ChoiceType::class, [
@@ -34,6 +38,10 @@ class ProfileRankType extends AbstractType
                     'None' => 2,
                     'Silver 1' => 3,
                     'Silver 2' => 4,
+                    'Silver 3' => 5,
+                    'Silver 4' => 6,
+                    'Silver Silver Elite' => 7,
+                    'Silver Elite Master' => 8,
                 ],
             ])
             ->add('owActualRank',ChoiceType::class, [
@@ -43,6 +51,8 @@ class ProfileRankType extends AbstractType
                     'Unranked' => 2,
                     'Bronze' => 3,
                     'Silver' => 4,
+                    'Gold' => 5,
+                    'Platinum' => 6,
                 ],
             ])
             ->add('owBestRank',ChoiceType::class, [
@@ -51,6 +61,8 @@ class ProfileRankType extends AbstractType
                     'None' => 2,
                     'Bronze' => 3,
                     'Silver' => 4,
+                    'Gold' => 5,
+                    'Platinum' => 6,
                 ],
             ])
             ->add('pubgLink',TextType::class, array('required'   => false))
