@@ -87,7 +87,7 @@ class HomepageController extends AbstractController
     /**
      * @Route("/profilerankpage", name="profile_rank_page")
      */
-    public function profileRank()
+    public function profileRankPage()
     {
         $user = new User();
         $form = $this->createForm(ProfileRankType::class, $user);

@@ -19,7 +19,7 @@ video:
 
 profilepagerank:
     path: /profile/rank
-    controller: App\Controller\HomepageController::profile_rank
+    controller: App\Controller\HomepageController::profileRankPage
 
 login:
     path: /login
