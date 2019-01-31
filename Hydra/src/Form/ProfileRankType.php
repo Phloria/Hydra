@@ -30,6 +30,18 @@ class ProfileRankType extends AbstractType
                     'Silver 4' => 6,
                     'Silver Silver Elite' => 7,
                     'Silver Elite Master' => 8,
+                    'Nova 1' => 9,
+                    'Nova 2' => 10,
+                    'Nova 3' => 11,
+                    'Nova Master' => 12,
+                    'Master Guardian' => 13,
+                    'Master Guardian 2' => 14,
+                    'Master Guardian Elite' => 15,
+                    'Distinguished Master Guardian' => 16,
+                    'Legendary Eagle' => 17,
+                    'Legendary Eagle Master' => 18,
+                    'Supreme Master First Class' => 19,
+                    'The Global Elite' => 20
                 ],
             ])
             ->add('csgoBestRank',ChoiceType::class, [
@@ -42,6 +54,18 @@ class ProfileRankType extends AbstractType
                     'Silver 4' => 6,
                     'Silver Silver Elite' => 7,
                     'Silver Elite Master' => 8,
+                    'Nova 1' => 9,
+                    'Nova 2' => 10,
+                    'Nova 3' => 11,
+                    'Nova Master' => 12,
+                    'Master Guardian' => 13,
+                    'Master Guardian 2' => 14,
+                    'Master Guardian Elite' => 15,
+                    'Distinguished Master Guardian' => 16,
+                    'Legendary Eagle' => 17,
+                    'Legendary Eagle Master' => 18,
+                    'Supreme Master First Class' => 19,
+                    'The Global Elite' => 20
                 ],
             ])
             ->add('owActualRank',ChoiceType::class, [
@@ -53,6 +77,10 @@ class ProfileRankType extends AbstractType
                     'Silver' => 4,
                     'Gold' => 5,
                     'Platinum' => 6,
+                    'Diamond' => 7,
+                    'Master' => 8,
+                    'GrandMaster' => 9,
+                    'Top 500' => 10
                 ],
             ])
             ->add('owBestRank',ChoiceType::class, [
@@ -63,6 +91,10 @@ class ProfileRankType extends AbstractType
                     'Silver' => 4,
                     'Gold' => 5,
                     'Platinum' => 6,
+                    'Diamond' => 7,
+                    'Master' => 8,
+                    'GrandMaster' => 9,
+                    'Top 500' => 10
                 ],
             ])
             ->add('pubgLink',TextType::class, array('required'   => false))
