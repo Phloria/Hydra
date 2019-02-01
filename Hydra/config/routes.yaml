@@ -2,13 +2,9 @@ index:
     path: /
     controller: App\Controller\HomepageController::index
 
-registerpage:
+register:
     path: /registration
     controller: App\Controller\HomepageController::registerpage
-
-profilepage:
-    path: /profile/
-    controller: App\Controller\HomepageController::profilepage
 
 logout:
     path: /logout
@@ -17,10 +13,17 @@ video:
     path: /videos
     controller: App\Controller\HomepageController::Videospage
 
+profile:
+    path: /profile/
+    controller: App\Controller\HomepageController::profilepage
 
-profilerankpage:
-    path: /profile/rank
+profileRank:
+    path: /profile/rank/
     controller: App\Controller\HomepageController::profileRankPage
+
+profilePassword:
+    path: /profile/password/
+    controller: App\Controller\HomepageController::profilePasswordPage
 
 login:
     path: /login
