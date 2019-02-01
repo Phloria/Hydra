@@ -112,7 +112,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/forgetpassword", name="forget_password")
+     * @Route("/forget_password", name="forget_password")
      */
     public function forgetPassword(Request $request, \Swift_Mailer $mailer, UserPasswordEncoderInterface $encoder)
     {

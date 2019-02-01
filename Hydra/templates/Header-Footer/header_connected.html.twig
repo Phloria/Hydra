@@ -1,10 +1,10 @@
 {% set menu %}
     <li><a href="/">Home</a></li>
-    <li><a href="Videospage">Videos</a></li>
-    <li><a href="Gamespage">Games</a></li>
-    <li><a href="Teampage">Team</a></li>
-    <li><a href="Memberspage">Members</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="{{ asset('Videospage')}}">Videos</a></li>
+    <li><a href="{{ asset('Gamespage')}}">Games</a></li>
+    <li><a href="{{ asset('Teampage')}}">Team</a></li>
+    <li><a href="{{ asset('Memberspage')}}">Members</a></li>
+    <li><a href="{{ asset('contact.html')}}">Contact</a></li>
 {% endset %}
 
 <html lang="zxx">
@@ -47,10 +47,10 @@
                 <img src="{{ asset('img/logo.png')}}" alt="">
             </a>
             <div class="user-panelb">
-                <a href="logout">Log out</a>
+                <a href="{{ asset('logout')}}">Log out</a>
             </div>
             <div class="user-panel space">
-                <a href="profile">Profile</a>
+                <a href="{{ asset('profile')}}">Profile</a>
             </div>
             <!-- responsive -->
             <div class="nav-switch">

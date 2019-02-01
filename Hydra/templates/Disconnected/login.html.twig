@@ -7,10 +7,10 @@
 {% endif %}
 
 {% block header %}
-	<link rel="stylesheet" href="css/register-login/style.css"/>
+	<link rel="stylesheet" href="{{ asset('css/register-login/style.css') }}"/>
 {% endblock %}
 {% block content %}
-	<section class="set-bg" data-setbg="img/recent-game-bg.png">
+	<section class="set-bg" data-setbg="{{ asset('img/recent-game-bg.png') }}">
 		<div class="community-warp">
 			<div class="innerb registration-text">
 
@@ -49,7 +49,7 @@
 					<button type="submit">Log In</button>
 				</form>
 
-				<form action="{{ path('forget_password_page') }}" method="get">
+				<form action="{{ asset('forgetpassword')}}" method="get">
 					<button type="submit">Forgot password</button>
 				</form>
 			</div>

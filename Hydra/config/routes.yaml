@@ -6,6 +6,14 @@ register:
     path: /registration
     controller: App\Controller\HomepageController::registerpage
 
+login:
+    path: /login
+    controller: App\Controller\UserController::login
+
+forgetPassword:
+    path: /forgetpassword
+    controller: App\Controller\HomepageController::forgetPasswordPage
+
 logout:
     path: /logout
 
@@ -14,17 +22,14 @@ video:
     controller: App\Controller\HomepageController::Videospage
 
 profile:
-    path: /profile/
+    path: /profile
     controller: App\Controller\HomepageController::profilepage
 
 profileRank:
-    path: /profile/rank/
+    path: /profile/rank
     controller: App\Controller\HomepageController::profileRankPage
 
 profilePassword:
-    path: /profile/password/
+    path: /profile/password
     controller: App\Controller\HomepageController::profilePasswordPage
 
-login:
-    path: /login
-    controller: App\Controller\UserController::login
