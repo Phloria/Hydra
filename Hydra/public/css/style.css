@@ -297,10 +297,18 @@ ol {
 }
 
 .user-panel-button {
-    width: 160px;
     display: inline;
     font-weight: 500;
     background: #ffb320;
+    padding: 4px 40px;
+    border-radius: 30px;
+    margin-right: 15px;
+}
+
+.user-panel-button-active {
+    display: inline;
+    font-weight: 500;
+    background: #ff5c04;
     padding: 4px 40px;
     border-radius: 30px;
     margin-right: 15px;
