@@ -15,7 +15,7 @@
 
 
 	<!-- Page info section -->
-	<section class="page-info-section set-bg" data-setbg="img/page-top-bg/1.jpg">
+	<section class="page-info-section set-bg" data-setbg="{{ asset('img/page-top-bg/1.jpg') }}">
 		<div class="pi-content">
 			<div class="container">
 				<div class="row">
@@ -35,10 +35,24 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
+					<div class="site-pagination">
+						<span class="user-panel-button active">All</span>
+						<div class="user-panel-button">
+							<a href="{{ asset('#')}}" >Tournament</a>
+						</div>
+						<div class="user-panel-button">
+							<a href="{{ asset('#')}}">Lisac1</a>
+						</div>
+					</div>
+					<div class="site-pagination">
+						<span class="active">01.</span>
+						<a href="#">02.</a>
+						<a href="#">03.</a>
+					</div><br>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="recent-game-item">
-								<div class="rgi-thumb set-bg" data-setbg="img/recent-game/1.jpg">
+								<div class="rgi-thumb set-bg" data-setbg="{{ asset('img/recent-game/1.jpg') }}">
 									<div class="cata new">racing</div>
 								</div>
 								<div class="rgi-content">

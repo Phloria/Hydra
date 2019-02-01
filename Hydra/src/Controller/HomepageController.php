@@ -69,7 +69,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/Videospage", name="videos_page")
+     * @Route("/videospage", name="videos_page")
      */
     public function videosPage()
     {

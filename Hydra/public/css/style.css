@@ -67,7 +67,7 @@ select:focus,
 button:focus,
 textarea:focus {
     outline: none;
-}
+}active
 
 a:hover,
 a:focus {
@@ -294,6 +294,16 @@ ol {
 .user-panelb a {
     font-size: 14px;
     color: #131313;
+}
+
+.user-panel-button {
+    width: 160px;
+    display: inline;
+    font-weight: 500;
+    background: #ffb320;
+    padding: 4px 40px;
+    border-radius: 30px;
+    margin-right: 15px;
 }
 
 .main-menu {
