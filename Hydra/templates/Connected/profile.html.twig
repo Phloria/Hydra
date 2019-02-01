@@ -71,10 +71,10 @@
 {% endif %}
 
 {% block header %}
-    <link rel="stylesheet" href="css/register-login/style.css"/>
+    <link rel="stylesheet" href="{{ asset('css/register-login/style.css')}}"/>
 {% endblock %}
 {% block content %}
-    <section class="recent-game-section set-bg" data-setbg="img/profile/Agarest-Sieghart.jpg">
+    <section class="recent-game-section set-bg" data-setbg="{{ asset('img/profile/Agarest-Sieghart.jpg')}}">
         <div class="bgprofile">
             <div class="innerprofile registration-text">
                 <div class="container-profile mb-4 mb-lg-4">
@@ -87,7 +87,7 @@
                         <br>
                     {% endfor %}
                     <div class="ti-content">
-                            <div class="ti-thumb set-bg" data-setbg="img/tournament/1.jpg"></div>
+                            <div class="ti-thumb set-bg" data-setbg="{{ asset('img/tournament/1.jpg')}}"></div>
                             <div class="ti-text">
                                 <h4>{{ app.user.username }}</h4>
                                 <ul>
