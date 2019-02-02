@@ -1,4 +1,53 @@
 {% extends is_granted('IS_AUTHENTICATED_FULLY') ? "Header-Footer/header_connected.html.twig" : "Header-Footer/header_disconnected.html.twig" %}
 {% block content %}
-    
+    <section class="page-section recent-game-page spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <form method="post" action="{{path('register')}}" class="home-form">
+                        {{ form_start(form) }}
+                        <h3>Registration Form</h3>
+                        <div class="form-group">
+                            <div class="form-wrapper">
+                                {{ form_row(form.firstName, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-wrapper">
+                                {{ form_row(form.lastName, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-wrapper">
+                                {{ form_row(form.username, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-wrapper">
+                                {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-wrapper">
+                                {{ form_row(form.birthdate, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-wrapper">
+                                {{ form_row(form.gender, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-wrapper">
+                            {{ form_row(form.password.first, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-wrapper">
+                            {{ form_row(form.password.second, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <!--div class="checkbox">
+                            <label>
+                                <input type="checkbox"> I accept the Terms of Use & Privacy Policy.
+                                <span class="checkmark"></span>
+                            </label>
+                        </div-->
+                        <button type="submit">Register</button>
+                        {{ form_end(form) }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
