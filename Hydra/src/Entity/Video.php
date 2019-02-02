@@ -21,22 +21,98 @@ class Video
      */
     private $url;
 
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $category;
 
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $title;
 
-    public function getId(): ?int
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $description;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getUrl(): ?string
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
     {
         return $this->url;
     }
 
-    public function setUrl(string $url): self
+    /**
+     * @param mixed $url
+     */
+    public function setUrl($url): void
     {
         $this->url = $url;
+    }
 
-        return $this;
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category): void
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title): void
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
     }
 }

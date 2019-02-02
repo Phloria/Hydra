@@ -33,3 +33,7 @@ profilePassword:
     path: /profile/password
     controller: App\Controller\HomepageController::profilePasswordPage
 
+videoNew:
+    path: /videos/new
+    controller: App\Controller\HomepageController::newVideoPage
+

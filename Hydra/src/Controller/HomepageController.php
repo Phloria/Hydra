@@ -101,4 +101,12 @@ class HomepageController extends AbstractController
     {
         return $this->render('Connected/profile_password.html.twig');
     }
+
+    /**
+     * @Route("/newvideopage", name="new_video_page")
+     */
+    public function newVideoPage()
+    {
+        return $this->render('Member/video_new.html.twig');
+    }
 }
