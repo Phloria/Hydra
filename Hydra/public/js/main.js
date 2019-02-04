@@ -30,7 +30,7 @@ $(window).on('load', function() {
 
 
 	/*------------------
-		Background Set
+		background Set
 	--------------------*/
 	$('.set-bg').each(function() {
 		var bg = $(this).data('setbg');

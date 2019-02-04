@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/register-login/style.css')}}"/>
 {% endblock %}
 {% block content %}
-    <section class="set-bg" data-setbg="{{ asset('img/recent-game-bg.png') }}">
+    <section class="set-bg" data-setbg="{{ asset('img/background/PUBG3.jpg') }}">
         <div class="background-postvideo spad">
             <div class="inner registration-text">
                 <div class="mb-4 mb-lg-4">
@@ -11,23 +11,24 @@
                         <br>
                         {{ form_start(form) }}
                         <h3>Post a Video</h3>
-                        <div class="form-wrapper">
+                        <div class="form-wrapper white">
                             {{ form_row(form.title, {'attr': {'class': 'form-control'}}) }}
                         </div>
-                        <div class="form-wrapper">
+                        <div class="form-wrapper white">
                             {{ form_row(form.category, {'attr': {'class': 'form-control'}}) }}
                         </div>
                         <div class="form-group">
-                            <div class="form-wrapper">
-                                {{ form_row(form.url, {'attr': {'class': 'form-control'}, 'label': "Video's ID (written in the link)"}) }}
+                            <div class="form-wrapper white">
+                                {{ form_row(form.urlId, {'attr': {'class': 'form-control'}, 'label': "Video's ID (written in the link)"}) }}
                             </div>
-                            <div class="form-wrapper">
+                            <div class="form-wrapper white">
                                 {{ form_row(form.type, {'attr': {'class': 'form-control'}}) }}
                             </div>
                         </div>
-                        <div class="form-wrapper">
+                        <div class="form-wrapper white">
                             {{ form_row(form.description, {'attr': {'class': 'form-control', "rows": '4'}}) }}
                         </div>
+                        <br>
                         <br>
                         <button type="submit">Post Video</button>
                         {{ form_end(form) }}

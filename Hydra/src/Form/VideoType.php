@@ -26,7 +26,7 @@ class VideoType extends AbstractType
         $builder
             ->add('title', TextType::class)
             ->add('description', TextareaType::class)
-            ->add('url', TextType::class)
+            ->add('urlId', TextType::class)
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => function ($category) {

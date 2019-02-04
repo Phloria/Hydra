@@ -19,7 +19,7 @@ class Video
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $url;
+    private $urlId;
 
     /**
      * Youtube or Twitch
@@ -66,17 +66,17 @@ class Video
     /**
      * @return mixed
      */
-    public function getUrl()
+    public function geturlId()
     {
-        return $this->url;
+        return $this->urlId;
     }
 
     /**
-     * @param mixed $url
+     * @param mixed $urlId
      */
-    public function setUrl($url): void
+    public function seturlId($urlId): void
     {
-        $this->url = $url;
+        $this->urlId = $urlId;
     }
 
     /**
