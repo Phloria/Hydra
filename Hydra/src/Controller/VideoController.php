@@ -18,9 +18,9 @@ use Symfony\Component\HttpFoundation\Request;
 class VideoController extends AbstractController
 {
     /**
-     * @Route("/newvideo", name="new_video")
+     * @Route("/postvideo", name="post_video")
      */
-    public function newVideo(Request $request)
+    public function postVideo(Request $request)
     {
         $video = new Video();
         $form = $this->createForm(VideoType::class, $video);

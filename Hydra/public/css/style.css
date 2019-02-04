@@ -262,10 +262,6 @@ ol {
     padding-top: 6px;
 }
 
-.space {
-    margin-right: 10px;
-}
-
 .user-panel {
     float: right;
     width: 100px;
@@ -1168,7 +1164,7 @@ ol {
 }
 
 .community-warp {
-    max-width: 1367px;
+    max-width: 1350px;
     margin: 0 auto;
     background: rgba(0, 0, 0, 0.28);
 }
@@ -1554,3 +1550,23 @@ ol {
     float: right;
 }
 
+.white {
+    color: #ffffff;
+}
+
+.black {
+    color: #000000;
+}
+
+
+.space {
+    margin-right: 10px;
+}
+
+.space-bottom {
+    margin-bottom: 20px;
+}
+
+textarea {
+    resize: none;
+}
