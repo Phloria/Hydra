@@ -22,7 +22,13 @@ class Video
     private $url;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * Youtube or Twitch
+     * @ORM\Column(type="string", length=20)
+     */
+    private $type;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="name")
      */
     private $category;
 
@@ -135,5 +141,21 @@ class Video
     public function setUsername($username): void
     {
         $this->username = $username;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type): void
+    {
+        $this->type = $type;
     }
 }

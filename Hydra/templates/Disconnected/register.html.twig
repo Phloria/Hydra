@@ -4,50 +4,52 @@
 {% endblock %}
 {% block content %}
 	<section class="set-bg" data-setbg="{{ asset('img/recent-game-bg.png') }}">
-		<div class="community-warp spad">
+		<div class="background-register spad">
 			<div class="inner registration-text">
-				<form method="post" action="{{path('register')}}" class="home-form">
-				{{ form_start(form) }}
-					<h3>Registration Form</h3>
-					<div class="form-group">
-						<div class="form-wrapper">
-							{{ form_row(form.firstName, {'attr': {'class': 'form-control'}}) }}
+				<div class="mb-4 mb-lg-4">
+					<form method="post" action="{{path('register')}}" class="home-form">
+					{{ form_start(form) }}
+						<h3>Registration Form</h3>
+						<div class="form-group">
+							<div class="form-wrapper">
+								{{ form_row(form.firstName, {'attr': {'class': 'form-control'}}) }}
+							</div>
+							<div class="form-wrapper">
+								{{ form_row(form.lastName, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-wrapper">
+								{{ form_row(form.username, {'attr': {'class': 'form-control'}}) }}
+							</div>
+							<div class="form-wrapper">
+								{{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-wrapper">
+								{{ form_row(form.birthdate, {'attr': {'class': 'form-control'}}) }}
+							</div>
+							<div class="form-wrapper">
+								{{ form_row(form.gender, {'attr': {'class': 'form-control'}}) }}
+							</div>
 						</div>
 						<div class="form-wrapper">
-							{{ form_row(form.lastName, {'attr': {'class': 'form-control'}}) }}
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="form-wrapper">
-							{{ form_row(form.username, {'attr': {'class': 'form-control'}}) }}
+							{{ form_row(form.password.first, {'attr': {'class': 'form-control'}}) }}
 						</div>
 						<div class="form-wrapper">
-							{{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+							{{ form_row(form.password.second, {'attr': {'class': 'form-control'}}) }}
 						</div>
-					</div>
-					<div class="form-group">
-						<div class="form-wrapper">
-							{{ form_row(form.birthdate, {'attr': {'class': 'form-control'}}) }}
-						</div>
-						<div class="form-wrapper">
-							{{ form_row(form.gender, {'attr': {'class': 'form-control'}}) }}
-						</div>
-					</div>
-					<div class="form-wrapper">
-						{{ form_row(form.password.first, {'attr': {'class': 'form-control'}}) }}
-					</div>
-					<div class="form-wrapper">
-						{{ form_row(form.password.second, {'attr': {'class': 'form-control'}}) }}
-					</div>
-					<!--div class="checkbox">
-						<label>
-							<input type="checkbox"> I accept the Terms of Use & Privacy Policy.
-							<span class="checkmark"></span>
-						</label>
-					</div-->
-					<button type="submit">Register</button>
-				{{ form_end(form) }}
-				</form>
+						<!--div class="checkbox">
+							<label>
+								<input type="checkbox"> I accept the Terms of Use & Privacy Policy.
+								<span class="checkmark"></span>
+							</label>
+						</div-->
+						<button type="submit">Register</button>
+					{{ form_end(form) }}
+					</form>
+				</div>
 			</div>
 		</div>
 	</section>

@@ -127,7 +127,7 @@
 }
 
 form {
-  width: 50%;
+  width: 60%;
   padding-left: 45px;
   margin: 0 auto;}
 
@@ -139,7 +139,7 @@ form {
       margin-right: 20px; }
 
 .form-wrapper {
-  margin-bottom: 17px; }
+  margin-bottom: 15px; }
   .form-wrapper label {
     margin-bottom: 9px;
     display: block; }
@@ -335,8 +335,14 @@ button {
   color: #ffb320;
 }
 
+.background-register {
+  max-width: 1150px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.28);
+}
+
 .background-postvideo {
-  max-width: 1300px;
+  max-width: 1150px;
   margin: 0 auto;
   background: rgba(0, 0, 0, 0.28);
 }

@@ -25,7 +25,8 @@ class VideoController extends AbstractController
         $video = new Video();
         $form = $this->createForm(VideoType::class, $video);
         $form->handleRequest($request);
-
+        $user = $this->getUser();
+        $video->setUsername($user->getUsername());
         if ($form->isSubmitted() && $form->isValid())
         {
             $entityManager = $this->getDoctrine()->getManager();
