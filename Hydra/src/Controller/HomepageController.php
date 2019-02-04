@@ -71,14 +71,6 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/videospage", name="videos_page")
-     */
-    public function videosPage()
-    {
-        return $this->render('videos.html.twig');
-    }
-
-    /**
      * @Route("/Memberspage", name="members")
      */
     public function membersPage()
@@ -102,6 +94,14 @@ class HomepageController extends AbstractController
     public function profilePasswordPage()
     {
         return $this->render('Connected/profile_password.html.twig');
+    }
+
+    /**
+     * @Route("/videospage", name="videos_page")
+     */
+    public function videosPage()
+    {
+        return $this->render('videos.html.twig');
     }
 
     /**

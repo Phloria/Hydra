@@ -48,6 +48,11 @@ class Video
     private $username;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Game", inversedBy="name")
+     */
+    private $game;
+
+    /**
      * @return mixed
      */
     public function getId()
