@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Entity\Video;
 use App\Form\RegisterType;
 use App\Form\ProfileRankType;
+use App\Form\VideoType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -109,7 +110,7 @@ class HomepageController extends AbstractController
     public function newVideoPage()
     {
         $video = new Video();
-        $form = $this->createForm(ProfileRankType::class, $video);
+        $form = $this->createForm(VideoType::class, $video);
         return $this->render('Member/video_new.html.twig',array('form' => $form->createView()));
     }
 }

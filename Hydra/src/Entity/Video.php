@@ -22,7 +22,7 @@ class Video
     private $url;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=50)
      */
     private $category;
 
@@ -35,6 +35,11 @@ class Video
      * @ORM\Column(type="string", length=100)
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $username;
 
     /**
      * @return mixed
@@ -114,5 +119,21 @@ class Video
     public function setDescription($description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username): void
+    {
+        $this->username = $username;
     }
 }
