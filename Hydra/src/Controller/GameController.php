@@ -10,7 +10,7 @@ namespace App\Controller;
 
 use App\Entity\Game;
 use App\Entity\Video;
-use App\Form\VideoType;
+use App\Form\GameType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +23,7 @@ class GameController extends AbstractController
     public function addGame(Request $request)
     {
         $game = new Game();
-        $form = $this->createForm(VideoType::class, $game);
+        $form = $this->createForm(GameType::class, $game);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid())
         {
@@ -31,9 +31,9 @@ class GameController extends AbstractController
             $entityManager->persist($game);
             $entityManager->flush();
 
-            return $this->redirectToRoute('videos_page');
+            return $this->redirectToRoute('games_page');
         }
-        $this->addFlash('error', 'The video was not upload!');
-        return $this->render('Member/video_new.html.twig');
+        $this->addFlash('error', 'The game was not added!');
+        return $this->render('Member/game_new.html.twig');
     }
 }
