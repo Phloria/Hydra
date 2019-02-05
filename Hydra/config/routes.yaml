@@ -17,10 +17,6 @@ forgetPassword:
 logout:
     path: /logout
 
-video:
-    path: /videos
-    controller: App\Controller\HomepageController::Videospage
-
 profile:
     path: /profile
     controller: App\Controller\HomepageController::profilepage
@@ -33,7 +29,18 @@ profilePassword:
     path: /profile/password
     controller: App\Controller\HomepageController::profilePasswordPage
 
+video:
+    path: /videos
+    controller: App\Controller\HomepageController::videosPage
+
 videoNew:
     path: /videos/new
     controller: App\Controller\HomepageController::newVideoPage
 
+game:
+    path: /games
+    controller: App\Controller\HomepageController::gamesPage
+
+gameNew:
+    path: /games/new
+    controller: App\Controller\HomepageController::newGamePage

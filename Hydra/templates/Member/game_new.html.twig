@@ -1,0 +1,29 @@
+{% extends is_granted('IS_AUTHENTICATED_FULLY') ? "Header-Footer/header_connected.html.twig" : "Header-Footer/header_disconnected.html.twig" %}
+{% block header %}
+    <link rel="stylesheet" href="{{ asset('css/register-login/style.css')}}"/>
+{% endblock %}
+{% block content %}
+    <section class="set-bg" data-setbg="{{ asset('img/background/PUBG3.jpg') }}">
+        <div class="background-postvideo spad">
+            <div class="inner registration-text">
+                <div class="mb-4 mb-lg-4">
+                    <form method="post" action="{{path('add_game')}}" class="home-form">
+                        <br>
+                        {{ form_start(form) }}
+                        <h3 style="color: white">Add a new Game</h3>
+                        <div class="form-wrapper white">
+                            {{ form_row(form.name, {'attr': {'class': 'form-control'}, 'label': "Full name (Ex: Counter-Strike: Global Offensive)"}) }}
+                        </div>
+                        <div class="form-wrapper white">
+                            {{ form_row(form.shortname, {'attr': {'class': 'form-control'}, 'label': "Abbreviation (Ex: CS:GO)"}) }}
+                        </div>
+                        <br>
+                        <br>
+                        <button type="submit">Add game</button>
+                        {{ form_end(form) }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

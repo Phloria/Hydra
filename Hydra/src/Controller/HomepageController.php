@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Game;
 use App\Entity\User;
 use App\Entity\Video;
+use App\Form\GameType;
 use App\Form\RegisterType;
 use App\Form\ProfileRankType;
 use App\Form\VideoType;
@@ -18,14 +20,6 @@ class HomepageController extends AbstractController
     public function index()
     {
         return $this->render('index.html.twig');
-    }
-
-    /**
-     * @Route("/Gamespage", name="games_page")
-     */
-    public function gamesPage()
-    {
-        return $this->render('games.html.twig');
     }
 
     /**
@@ -116,5 +110,23 @@ class HomepageController extends AbstractController
         $video = new Video();
         $form = $this->createForm(VideoType::class, $video);
         return $this->render('Member/video_new.html.twig',array('form' => $form->createView()));
+    }
+
+    /**
+     * @Route("/gamespage", name="games_page")
+     */
+    public function gamesPage()
+    {
+        return $this->render('games.html.twig');
+    }
+
+    /**
+     * @Route("/newgamepage", name="new_game_page")
+     */
+    public function newGamePage()
+    {
+        $game = new Game();
+        $form = $this->createForm(GameType::class, $game);
+        return $this->render('Member/game_new.html.twig',array('form' => $form->createView()));
     }
 }
