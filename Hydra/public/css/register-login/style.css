@@ -355,3 +355,7 @@ button {
   font-size: 14px;
   color: #131313;
 }
+
+.space-bottom {
+  margin-bottom: 20px;
+}

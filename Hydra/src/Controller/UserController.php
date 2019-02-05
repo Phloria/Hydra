@@ -80,7 +80,7 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->render('Disconnected/login.html.twig');
+            return $this->redirectToRoute('login_page');
         }
         return $this->render('Disconnected/register.html.twig', array('form' => $form->createView(),'error' => 1));
     }
@@ -134,7 +134,7 @@ class UserController extends AbstractController
             $entityManager->flush();
             $this->mailRandomPassword($mailer, $user[0]->getEmail(), $user[0]->getFirstName(), $password);
             $this->addFlash('notice', 'A mail has been sent with a new password!');
-            return $this->render('Disconnected/login.html.twig', array("last_username" => $user[0]->getUsername(), 'error' => 0));
+            return $this->redirectToRoute('login_page');
         } else {
             $this->addFlash('error', 'This Username or Email doesn\'t exist!');
             return $this->render('Disconnected/forget_password.html.twig');
