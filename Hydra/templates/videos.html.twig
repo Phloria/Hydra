@@ -50,13 +50,14 @@
 					</div>
 					<br><br>
 					<div class="row">
+                        {% for video in videos %}
 						<div class="col-md-6">
 							<div class="recent-game-item">
 								<div class="rgi-thumb set-bg" data-setbg="{{ asset('img/recent-game/1.jpg') }}">
 									<div class="cata new">racing</div>
 								</div>
 								<div class="rgi-content">
-									<h5>Suspendisse ut justo tem por, rutrum</h5>
+									<h5>{{ video.title }}</h5>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
 									<a href="#" class="comment">3 Comments</a>
 									<div class="rgi-extra">
@@ -66,6 +67,7 @@
 								</div>
 							</div>
 						</div>
+                        {% endfor %}
 						<div class="col-md-6">
 							<div class="recent-game-item">
 								<div class="rgi-thumb set-bg" data-setbg="img/recent-game/2.jpg">

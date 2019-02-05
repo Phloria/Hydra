@@ -101,7 +101,11 @@ class HomepageController extends AbstractController
      */
     public function videosPage()
     {
-        return $this->render('videos.html.twig');
+        $videos = $this->getDoctrine()->getRepository(Video::class)->findAll();
+        if (!$videos) {
+            return $this->render('videos.html.twig', ['videos' => 0]);
+        }
+        return $this->render('videos.html.twig', ['videos'=> $videos] );
     }
 
     /**

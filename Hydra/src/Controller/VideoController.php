@@ -33,7 +33,9 @@ class VideoController extends AbstractController
             $entityManager->persist($video);
             $entityManager->flush();
 
-            return $this->render('videos.html.twig');
+            $videos = $this->getDoctrine()->getRepository(Video::class)->findAll();
+
+            return $this->render('videos.html.twig', ['videos'=> $videos]);
         }
         $this->addFlash('error', 'The video was not upload!');
         return $this->render('Member/video_new.html.twig');
