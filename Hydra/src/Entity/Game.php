@@ -21,6 +21,11 @@ class Game
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="string", length=50, unique=true)
+     */
+    private $shortName;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -36,5 +41,21 @@ class Game
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShortName()
+    {
+        return $this->shortName;
+    }
+
+    /**
+     * @param mixed $shortName
+     */
+    public function setShortName($shortName): void
+    {
+        $this->shortName = $shortName;
     }
 }
