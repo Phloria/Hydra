@@ -48,9 +48,11 @@
 					</div>
 				</div>
 			</div>
+			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<div class="text-center pt-4">
 				<button class="site-btn btn-sm">Load More</button>
 			</div>
+			{% endif %}
 		</div>
 	</section>
 	<!-- Page section end -->

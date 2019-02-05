@@ -71,7 +71,7 @@ class ProfileController extends AbstractController
             $session = $request->getSession();
             $session->set('user', $user);
             $this->addFlash('notice', 'Your changes were saved!');
-            return $this->render('Connected/profile.html.twig');
+            return $this->redirectToRoute('profile_page');
         }
         $this->addFlash('error', 'An unknown error has occurred!');
         return $this->render('Connected/profile_rank.html.twig', array('form' => $form->createView()));
