@@ -53,9 +53,19 @@
                         {% for video in videos %}
 						<div class="col-md-6">
 							<div class="recent-game-item">
-								<div class="rgi-thumb set-bg" data-setbg="{{ asset('img/recent-game/1.jpg') }}">
-									<div class="cata new">racing</div>
-								</div>
+								{% if video.game.shortname == "CS:GO" %}
+									<div class="rgi-thumb set-bg" data-setbg="{{ asset('img/game/CSGO.jpg') }}">
+										<div class="cata new">racing</div>
+									</div>
+								{% elseif video.game.shortname == "OW" %}
+									<div class="rgi-thumb set-bg" data-setbg="{{ asset('img/recent-game/1.jpg') }}">
+										<div class="cata new">racing</div>
+									</div>
+                                {% elseif video.game.shortname == "PUBG" %}
+									<div class="rgi-thumb set-bg" data-setbg="{{ asset('img/recent-game/7.jpg') }}">
+										<div class="cata new">racing</div>
+									</div>
+								{% endif %}
 								<div class="rgi-content">
 									<h5>{{ video.title }}</h5>
 									<p>{{ video.description }} </p>

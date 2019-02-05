@@ -163,4 +163,20 @@ class Video
     {
         $this->type = $type;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getGame()
+    {
+        return $this->game;
+    }
+
+    /**
+     * @param mixed $game
+     */
+    public function setGame($game): void
+    {
+        $this->game = $game;
+    }
 }

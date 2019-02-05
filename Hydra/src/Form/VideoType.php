@@ -10,6 +10,7 @@ namespace App\Form;
 
 
 use App\Entity\Category;
+use App\Entity\Game;
 use App\Entity\Video;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -31,6 +32,12 @@ class VideoType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => function ($category) {
                     return $category->getName();
+                }
+            ])
+            ->add('game', EntityType::class, [
+                'class' => Game::class,
+                'choice_label' => function ($game) {
+                    return $game->getShortName();
                 }
             ])
             ->add('type',ChoiceType::class, [
