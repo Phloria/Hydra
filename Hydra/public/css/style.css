@@ -568,7 +568,7 @@ ol {
     background: #fff;
     border: 1px solid #d6dee7;
     border-top: none;
-    height: 200px;
+    height: 192px;
     position: relative;
 }
 
@@ -1581,4 +1581,8 @@ ol {
 
 textarea {
     resize: none;
+}
+
+.tabulation {
+    padding-left:10em;
 }

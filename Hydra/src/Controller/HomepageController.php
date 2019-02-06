@@ -11,6 +11,7 @@ use App\Form\ProfileRankType;
 use App\Form\VideoType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class HomepageController extends AbstractController
 {
@@ -128,5 +129,16 @@ class HomepageController extends AbstractController
         $game = new Game();
         $form = $this->createForm(GameType::class, $game);
         return $this->render('Member/game_new.html.twig',array('form' => $form->createView()));
+    }
+
+    /**
+     * @Route("/videopage", name="video_page")
+     */
+    public function videoPage(Request $request)
+    {
+        $videoId = $request->get('videoId');
+        $entityManager = $this->getDoctrine()->getManager();
+        $video = $entityManager->getRepository(User::class)->findOneBy(['id' => $videoId]);
+        return $this->render('video.html.twig', array('video' => $video));
     }
 }

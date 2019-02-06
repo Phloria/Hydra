@@ -29,6 +29,7 @@ class VideoController extends AbstractController
         $video->setUsername($user->getUsername());
         if ($form->isSubmitted() && $form->isValid())
         {
+            $video->setCreatedate(new \DateTime());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($video);
             $entityManager->flush();

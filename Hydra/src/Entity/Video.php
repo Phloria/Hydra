@@ -19,7 +19,7 @@ class Video
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $urlId;
+    private $urlid;
 
     /**
      * Youtube or Twitch
@@ -51,6 +51,11 @@ class Video
      * @ORM\ManyToOne(targetEntity="App\Entity\Game", inversedBy="name")
      */
     private $game;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $createdate;
 
     /**
      * @return mixed
@@ -178,5 +183,21 @@ class Video
     public function setGame($game): void
     {
         $this->game = $game;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedate()
+    {
+        return $this->createdate;
+    }
+
+    /**
+     * @param mixed $createdate
+     */
+    public function setCreatedate($createdate): void
+    {
+        $this->createdate = $createdate;
     }
 }

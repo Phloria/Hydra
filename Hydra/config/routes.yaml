@@ -29,9 +29,13 @@ profilePassword:
     path: /profile/password
     controller: App\Controller\HomepageController::profilePasswordPage
 
-video:
+videos:
     path: /videos
     controller: App\Controller\HomepageController::videosPage
+
+video:
+    path: /videos/video
+    controller: App\Controller\HomepageController::videoPage
 
 videoNew:
     path: /videos/new

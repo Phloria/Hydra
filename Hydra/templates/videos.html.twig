@@ -53,6 +53,7 @@
                         {% for video in videos %}
 						<div class="col-md-6">
 							<div class="recent-game-item">
+								<a href="{{ asset('videopage')}}" type='hidden'>
 								{% if video.game.shortname == "CS:GO" %}
 									<div class="rgi-thumb set-bg" data-setbg="{{ asset('img/game/CSGO.jpg') }}">
 										<div class="cata new">racing</div>
@@ -66,10 +67,13 @@
 										<div class="cata new">racing</div>
 									</div>
 								{% endif %}
+									<input id="videoId" type='hidden' value="{{ video.id }}">
+								</a>
 								<div class="rgi-content">
 									<h5>{{ video.title }}</h5>
 									<p>{{ video.description }} </p>
-									<a href="#" class="comment">3 Comments</a>
+									<a href="#" class="comment">3 Comments </a>
+									<a class="comment tabulation">{{ video.createdate|date('Y-m-d') }}</a>
 									<div class="rgi-extra">
 										<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
 										<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
