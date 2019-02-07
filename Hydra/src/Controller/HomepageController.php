@@ -132,13 +132,15 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/videopage", name="video_page")
+     * @Route("/videopage/{videoId}", name="video_page")
      */
-    public function videoPage(Request $request)
+    public function videoPage(Request $request, $videoId)
     {
-        $videoId = $request->get('videoId');
         $entityManager = $this->getDoctrine()->getManager();
-        $video = $entityManager->getRepository(User::class)->findOneBy(['id' => $videoId]);
-        return $this->render('video.html.twig', array('video' => $video));
+        $video = $entityManager->getRepository(Video::class)->findOneBy(['id' => $videoId]);
+        if ($video)
+            return $this->render('video.html.twig', array('video' => $video));
+        else
+            return $this->render('index.html.twig');
     }
 }

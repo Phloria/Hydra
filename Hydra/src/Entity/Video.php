@@ -19,7 +19,7 @@ class Video
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $urlid;
+    private $urlId;
 
     /**
      * Youtube or Twitch

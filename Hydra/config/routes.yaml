@@ -34,8 +34,10 @@ videos:
     controller: App\Controller\HomepageController::videosPage
 
 video:
-    path: /videos/video
+    path: /videos/{videoId}
     controller: App\Controller\HomepageController::videoPage
+    defaults:
+        videoId: 0
 
 videoNew:
     path: /videos/new

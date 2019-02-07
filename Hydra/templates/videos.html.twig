@@ -53,7 +53,7 @@
                         {% for video in videos %}
 						<div class="col-md-6">
 							<div class="recent-game-item">
-								<a href="{{ asset('videopage')}}" type='hidden'>
+								<a href='{{ asset("videos/" ~ video.id)}}' type='hidden'>
 								{% if video.game.shortname == "CS:GO" %}
 									<div class="rgi-thumb set-bg" data-setbg="{{ asset('img/game/CSGO.jpg') }}">
 										<div class="cata new">racing</div>
