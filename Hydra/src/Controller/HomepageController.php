@@ -92,6 +92,24 @@ class HomepageController extends AbstractController
     }
 
     /**
+     * @Route("/gamespage", name="games_page")
+     */
+    public function gamesPage()
+    {
+        return $this->render('games.html.twig');
+    }
+
+    /**
+     * @Route("/newgamepage", name="new_game_page")
+     */
+    public function newGamePage()
+    {
+        $game = new Game();
+        $form = $this->createForm(GameType::class, $game);
+        return $this->render('Member/game_new.html.twig',array('form' => $form->createView()));
+    }
+
+    /**
      * @Route("/videospage", name="videos_page")
      */
     public function videosPage()
@@ -114,30 +132,14 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/gamespage", name="games_page")
-     */
-    public function gamesPage()
-    {
-        return $this->render('games.html.twig');
-    }
-
-    /**
-     * @Route("/newgamepage", name="new_game_page")
-     */
-    public function newGamePage()
-    {
-        $game = new Game();
-        $form = $this->createForm(GameType::class, $game);
-        return $this->render('Member/game_new.html.twig',array('form' => $form->createView()));
-    }
-
-    /**
      * @Route("/videopage/{videoId}", name="video_page")
      */
     public function videoPage(Request $request, $videoId)
     {
+        $array_info = preg_split("/\:/", $videoId);
+        $urlId = $array_info[1];
         $entityManager = $this->getDoctrine()->getManager();
-        $video = $entityManager->getRepository(Video::class)->findOneBy(['id' => $videoId]);
+        $video = $entityManager->getRepository(Video::class)->findOneBy(['urlId' => $urlId]);
         if ($video)
             return $this->render('video.html.twig', array('video' => $video));
         else

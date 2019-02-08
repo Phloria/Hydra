@@ -33,15 +33,15 @@ videos:
     path: /videos
     controller: App\Controller\HomepageController::videosPage
 
+videoNew:
+    path: /videos/new
+    controller: App\Controller\HomepageController::newVideoPage
+
 video:
     path: /videos/{videoId}
     controller: App\Controller\HomepageController::videoPage
     defaults:
         videoId: 0
-
-videoNew:
-    path: /videos/new
-    controller: App\Controller\HomepageController::newVideoPage
 
 game:
     path: /games
