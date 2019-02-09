@@ -1583,6 +1583,10 @@ ol {
     margin-right: 10px;
 }
 
+.space-right-big {
+    margin-right: 60px;
+}
+
 .space-bottom {
     margin-bottom: 20px;
 }
@@ -1599,7 +1603,17 @@ textarea {
     padding-left:10em;
 }
 
-.video{
-    margin: 0 auto;
-    width: 960px;
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

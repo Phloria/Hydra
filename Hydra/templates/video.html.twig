@@ -18,9 +18,8 @@
 
 	<section class="page-section recent-game-page spad">
 		<div class="container">
-			<div class="col-lg-10">
+			<div class="col-lg-11">
 				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-
 					<form action="{{path('edit_video_page')}}">
 						<input type="hidden" name="videoid" value="{{ video.id }}">
 						<button class="background-yellow position-left" type="submit">Edit</button>
@@ -29,22 +28,25 @@
 						<input type="hidden" name="videoid" value="{{ video.id }}">
 						<button class="background-yellow position-right" type="submit">Delete</button>
 					</form>
+					<br><br><br>
 				{% endif %}
-				{% if video.type == "Youtube" %}
-				<iframe width="960" height="540"
-						allowfullscreen="allowfullscreen"
-						frameborder="0"
-						src="https://www.youtube.com/embed/{{ video.urlId }}?autoplay=1">
-				</iframe>
-				{% elseif video.type == "Twitch" %}
-				<iframe width="960" height="540"
-						frameborder="0"
-						allowfullscreen="allowfullscreen"
-						src="https://player.twitch.tv/?video={{ video.urlId }}>">
-				</iframe>
-				{% endif %}
+				<div class="video-container space-top">
+					{% if video.type == "Youtube" %}
+					<iframe width="960" height="540"
+							allowfullscreen="allowfullscreen"
+							frameborder="0"
+							src="https://www.youtube.com/embed/{{ video.urlId }}?autoplay=1">
+					</iframe>
+					{% elseif video.type == "Twitch" %}
+					<iframe width="960" height="540"
+							frameborder="0"
+							allowfullscreen="allowfullscreen"
+							src="https://player.twitch.tv/?video={{ video.urlId }}>">
+					</iframe>
+					{% endif %}
+				</div>
 				<div class="space-top">
-					<a>{{ video.title }}</a>
+					<h2>{{ video.title }}</h2>
 					<p>{{ video.description }} </p>
 				</div>
 			</div>
