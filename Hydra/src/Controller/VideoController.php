@@ -24,11 +24,9 @@ class VideoController extends AbstractController
     public function postVideo(Request $request)
     {
         $videoid = $request->get('videoid');
+        $entityManager = $this->getDoctrine()->getManager();
         if ($videoid)
-        {
-            $entityManager = $this->getDoctrine()->getManager();
             $video = $entityManager->getRepository(Video::class)->findOneBy(['id' => $videoid]);
-        }
         else
             $video = new Video();
         $form = $this->createForm(VideoType::class, $video);
@@ -38,7 +36,6 @@ class VideoController extends AbstractController
         if ($form->isSubmitted() && $form->isValid())
         {
             $video->setCreatedate(new \DateTime());
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($video);
             $entityManager->flush();
 
@@ -54,27 +51,10 @@ class VideoController extends AbstractController
     public function deleteVideo(Request $request)
     {
         $videoid = $request->get('videoid');
-        if ($videoid)
-        {
-            $entityManager = $this->getDoctrine()->getManager();
-            $video = $entityManager->getRepository(Video::class)->findOneBy(['id' => $videoid]);
-        }
-        else
-            $video = new Video();
-        $form = $this->createForm(VideoType::class, $video);
-        $form->handleRequest($request);
-        $user = $this->getUser();
-        $video->setUsername($user->getUsername());
-        if ($form->isSubmitted() && $form->isValid())
-        {
-            $video->setCreatedate(new \DateTime());
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($video);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('videos_page');
-        }
-        $this->addFlash('error', 'The video was not upload!');
-        return $this->render('Member/video_new.html.twig');
+        $entityManager = $this->getDoctrine()->getManager();
+        $video = $entityManager->getRepository(Video::class)->findOneBy(['id' => $videoid]);
+        $entityManager->remove($video);
+        $entityManager->flush();
+        return $this->redirectToRoute('videos_page');
     }
 }
