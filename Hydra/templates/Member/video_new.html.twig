@@ -10,7 +10,11 @@
                     <form method="post" action="{{path('post_video')}}" class="home-form">
                         <br>
                         {{ form_start(form) }}
-                        <h3 style="color: white">Post a Video</h3>
+                        {% if video.id is defined %}
+                            <h3 style="color: white">Edit a Video</h3>
+                        {% else %}
+                            <h3 style="color: white">Post a Video</h3>
+                        {% endif %}
                         <div class="form-wrapper white">
                             {{ form_row(form.title, {'attr': {'class': 'form-control'}}) }}
                         </div>
@@ -35,6 +39,9 @@
                         </div>
                         <br>
                         <br>
+                        {% if video.id is defined %}
+                            <input type="hidden" name="videoid" value="{{ video.id }}">
+                        {% endif %}
                         <button type="submit">Post Video</button>
                         {{ form_end(form) }}
                     </form>

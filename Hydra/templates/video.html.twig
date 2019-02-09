@@ -1,4 +1,7 @@
 {% extends is_granted('IS_AUTHENTICATED_FULLY') ? "Header-Footer/header_connected.html.twig" : "Header-Footer/header_disconnected.html.twig" %}
+{% block header %}
+	<link rel="stylesheet" href="{{ asset('css/register-login/style.css')}}"/>
+{% endblock %}
 {% block content %}
 	<!-- Latest news section -->
 	<div class="latest-news-section">
@@ -15,7 +18,7 @@
 
 	<section class="page-section recent-game-page spad">
 		<div class="container">
-			<div class="col-lg-8">
+			<div class="col-lg-10">
 				{% if video.type == "Youtube" %}
 				<iframe width="960" height="540"
 						allowfullscreen="allowfullscreen"
@@ -30,7 +33,11 @@
 				</iframe>
 				{% endif %}
 				<div class="space-top">
-					<h2>{{ video.title }}</h2>
+					<form method="post" action="{{path('edit_video_page')}}" class="position-right">
+						<input type="hidden" name="videoid" value="{{ video.id }}">
+						<button class="background-yellow position-right" type="submit">Edit Video</button>
+					</form>
+					<a>{{ video.title }}</a>
 					<p>{{ video.description }} </p>
 				</div>
 			</div>

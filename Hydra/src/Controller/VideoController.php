@@ -22,6 +22,36 @@ class VideoController extends AbstractController
      */
     public function postVideo(Request $request)
     {
+        $videoid = $request->get('videoid');
+        if ($videoid)
+        {
+            $entityManager = $this->getDoctrine()->getManager();
+            $video = $entityManager->getRepository(Video::class)->findOneBy(['id' => $videoid]);
+        }
+        else
+            $video = new Video();
+        $form = $this->createForm(VideoType::class, $video);
+        $form->handleRequest($request);
+        $user = $this->getUser();
+        $video->setUsername($user->getUsername());
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $video->setCreatedate(new \DateTime());
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($video);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('videos_page');
+        }
+        $this->addFlash('error', 'The video was not upload!');
+        return $this->render('Member/video_new.html.twig');
+    }
+
+    /**
+     * @Route("/editvideo", name="edit_video")
+     */
+    public function editVideo(Request $request)
+    {
         $video = new Video();
         $form = $this->createForm(VideoType::class, $video);
         $form->handleRequest($request);

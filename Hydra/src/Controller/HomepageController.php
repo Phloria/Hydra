@@ -132,9 +132,24 @@ class HomepageController extends AbstractController
     }
 
     /**
+     * @Route("/videos/edit", name="edit_video_page")
+     */
+    public function editVideoPage(Request $request)
+    {
+        $videoid = $request->get('videoid');
+        if ($videoid) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $video = $entityManager->getRepository(Video::class)->findOneBy(['id' => $videoid]);
+            $form = $this->createForm(VideoType::class, $video);
+            return $this->render('Member/video_new.html.twig', array('video' => $video, 'form' => $form->createView()));
+        }
+        return $this->render('index.html.twig');
+    }
+
+    /**
      * @Route("/videopage/{videoId}", name="video_page")
      */
-    public function videoPage(Request $request, $videoId)
+    public function videoPage($videoId)
     {
         $array_info = preg_split("/\:/", $videoId);
         $urlId = $array_info[1];

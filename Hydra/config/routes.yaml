@@ -37,6 +37,10 @@ videoNew:
     path: /videos/new
     controller: App\Controller\HomepageController::newVideoPage
 
+videoEdit:
+    path: /videos/edit
+    controller: App\Controller\HomepageController::newVideoPage
+
 video:
     path: /videos/{videoId}
     controller: App\Controller\HomepageController::videoPage
