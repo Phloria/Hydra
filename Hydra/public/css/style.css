@@ -1562,6 +1562,10 @@ ol {
     float: right;
 }
 
+.position-left {
+    float: left;
+}
+
 .background-yellow {
     background: #ffb320;
 }

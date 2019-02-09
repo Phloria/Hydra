@@ -19,6 +19,17 @@
 	<section class="page-section recent-game-page spad">
 		<div class="container">
 			<div class="col-lg-10">
+				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+					<form action="{{path('edit_video_page')}}">
+						<input type="hidden" name="videoid" value="{{ video.id }}">
+						<button class="background-yellow position-left" type="submit">Edit</button>
+					</form>
+					<form action="{{path('edit_video_page')}}">
+						<input type="hidden" name="videoid" value="{{ video.id }}">
+						<button class="background-yellow position-right" type="submit">Delete</button>
+					</form>
+				{% endif %}
 				{% if video.type == "Youtube" %}
 				<iframe width="960" height="540"
 						allowfullscreen="allowfullscreen"
@@ -33,10 +44,6 @@
 				</iframe>
 				{% endif %}
 				<div class="space-top">
-					<form method="post" action="{{path('edit_video_page')}}" class="position-right">
-						<input type="hidden" name="videoid" value="{{ video.id }}">
-						<button class="background-yellow position-right" type="submit">Edit Video</button>
-					</form>
 					<a>{{ video.title }}</a>
 					<p>{{ video.description }} </p>
 				</div>

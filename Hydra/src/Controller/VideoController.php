@@ -18,6 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 class VideoController extends AbstractController
 {
     /**
+     * Post a video or Edit
      * @Route("/postvideo", name="post_video")
      */
     public function postVideo(Request $request)
@@ -48,11 +49,18 @@ class VideoController extends AbstractController
     }
 
     /**
-     * @Route("/editvideo", name="edit_video")
+     * @Route("/deletevideo", name="delete_video")
      */
-    public function editVideo(Request $request)
+    public function deleteVideo(Request $request)
     {
-        $video = new Video();
+        $videoid = $request->get('videoid');
+        if ($videoid)
+        {
+            $entityManager = $this->getDoctrine()->getManager();
+            $video = $entityManager->getRepository(Video::class)->findOneBy(['id' => $videoid]);
+        }
+        else
+            $video = new Video();
         $form = $this->createForm(VideoType::class, $video);
         $form->handleRequest($request);
         $user = $this->getUser();

@@ -45,8 +45,9 @@
 						<span class="active">01.</span>
 						<a href="#">02.</a>
 						<a href="#">03.</a>
-
-                        <div class="user-panel-button position-right" style="cursor: pointer;" onclick='window.location="{{ asset('/videos/new')}}"'> New Post </div>
+						{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+							<div class="user-panel-button position-right" style="cursor: pointer;" onclick='window.location="{{ asset('/videos/new')}}"'> New Post </div>
+						{% endif %}
 					</div>
 					<br><br>
 					<div class="row">
