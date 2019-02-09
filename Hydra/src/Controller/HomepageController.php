@@ -92,7 +92,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/gamespage", name="games_page")
+     * @Route("/games", name="games_page")
      */
     public function gamesPage()
     {
@@ -100,7 +100,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/newgamepage", name="new_game_page")
+     * @Route("/games/new", name="new_game_page")
      */
     public function newGamePage()
     {
@@ -110,7 +110,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/videospage", name="videos_page")
+     * @Route("/videos", name="videos_page")
      */
     public function videosPage()
     {
@@ -122,7 +122,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/newvideopage", name="new_video_page")
+     * @Route("/videos/new", name="new_video_page")
      */
     public function newVideoPage()
     {
@@ -147,7 +147,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/videopage/{videoId}", name="video_page")
+     * @Route("/videos/{videoId}", name="video_page")
      */
     public function videoPage($videoId)
     {
