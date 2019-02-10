@@ -28,7 +28,11 @@ class HomepageController extends AbstractController
      */
     public function teamPage()
     {
-        return $this->render('team.html.twig');
+        $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+        if (!$users) {
+            return $this->render('team.html.twig', ['users' => 0]);
+        }
+        return $this->render('team.html.twig', ['users' => $users]);
     }
 
     /**

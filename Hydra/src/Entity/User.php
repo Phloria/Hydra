@@ -273,7 +273,7 @@ class User implements UserInterface, \Serializable
      */
     public function getJoindate()
     {
-        return $this->joindate;
+        return $this->joindate->format('Y-m-d');
     }
 
     /**
@@ -410,5 +410,15 @@ class User implements UserInterface, \Serializable
     public function setgender($gender): void
     {
         $this->gender = $gender;
+    }
+
+    public function getAge()
+    {
+        $now = new \DateTime('now');
+        $age = $this->getBirthdate();
+        $difference = $now->diff($age);
+
+        //return $difference->format('%y years, %m months, %d days old.');
+        return $difference->format('%y years old');
     }
 }

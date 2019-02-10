@@ -16,7 +16,7 @@
 	</div>
 	<!-- Latest news section end -->
 
-	<section class="page-section recent-game-page spad">
+	<section class="page-section spad-smaller">
 		<div class="container">
 			<div class="col-lg-11">
 				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -46,6 +46,7 @@
 					{% endif %}
 				</div>
 				<div class="space-top">
+					<a class="position-right">Posted by : {{ video.username }}</a>
 					<h2>{{ video.title }}</h2>
 					<p>{{ video.description }} </p>
 				</div>
