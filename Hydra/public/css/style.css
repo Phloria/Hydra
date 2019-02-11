@@ -1191,7 +1191,7 @@ ol {
 }
 
 .community-post-list li {
-    padding: 33px 55px 65px;
+    padding: 33px 28px 65px;
     margin-bottom: 21px;
     overflow: hidden;
     border: 1px solid #878787;
@@ -1199,14 +1199,13 @@ ol {
 }
 
 .community-post-list .community-post .author-avator {
-    width: 63px;
-    height: 63px;
-    border-radius: 50%;
+    width: 95px;
+    height: 95px;
     float: left;
 }
 
 .community-post-list .community-post .post-content {
-    padding-left: 100px;
+    padding-left: 123px;
 }
 
 .community-post-list .community-post .post-content h5 {

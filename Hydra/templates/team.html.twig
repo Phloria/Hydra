@@ -43,63 +43,70 @@
 					{% for user in users %}
 						<li>
 							<div class="community-post">
-								<!--div class="author-avator set-bg" data-setbg="img/authors/1.jpg"--><!--/div-->
+								<div class="author-avator set-bg" data-setbg="img/tournament/1.jpg"></div>
 								<div class="post-content">
 									<h5>{{ user.username }}<span>{{ user.role }}</span></h5>
 									<div class="post-date">{{ user.age }}<br>
 										Joined: {{ user.joindate }}</div>
+									{% if user.csgoBestRank != 1 and user.csgoBestRank != 2 %}
 									<table>
-										{% if user.csgoBestRank != 1 and user.csgoBestRank != 2 %}
-											<tr>
-											{% if user.csgoActualRank == user.csgoBestRank %}
-												<td>
-													<div class="attachment-file">
-														<p>CS:GO Actual & Best Rank:</p>
-														<img src="{{ asset('img/rank/csgo/'~ user.csgoActualRank ~'.jpg') }}" alt="">
-													</div>
-												</td>
-											{% else %}
-												<td>
-													<div class="attachment-file">
-														<p>CS:GO Actual Rank:</p>
-														<img src="{{ asset('img/rank/csgo/'~ user.csgoActualRank ~'.jpg') }}" alt="">
-													</div>
-												</td>
-												<td>
-													<div class="attachment-file">
-														<p>CS:GO Best Rank:</p>
-														<img src="{{ asset('img/rank/csgo/'~ user.csgoActualRank ~'.jpg') }}" alt="">
-													</div>
-												</td>
-											{% endif %}
-											</tr>
+									<tr>
+										{% if user.csgoActualRank == user.csgoBestRank %}
+										<td>
+											<div class="attachment-file">
+												<p>CS:GO Actual & Best Rank :</p>
+												<img src="{{ asset('img/rank/csgo/'~ user.csgoActualRank ~'.jpg') }}" alt="">
+											</div>
+										</td>
+										{% else %}
+										<td>
+											<div class="attachment-file">
+												<p>CS:GO Actual Rank :</p>
+												<img src="{{ asset('img/rank/csgo/'~ user.csgoActualRank ~'.jpg') }}" alt="">
+											</div>
+										</td>
+										<td>
+											<div class="attachment-file">
+												<p>CS:GO Best Rank :</p>
+												<img src="{{ asset('img/rank/csgo/'~ user.csgoBestRank ~'.jpg') }}" alt="">
+											</div>
+										</td>
 										{% endif %}
-										{% if user.owBestRank != 1 and user.owBestRank != 2 %}
-											<tr>
-											{% if user.owActualRank == user.owBestRank %}
-												<td>
-													<div class="attachment-file">
-														<p>Overwatch Actual & Best Rank:</p>
-														<img src="{{ asset('img/rank/ow/'~ user.owActualRank ~'.jpg') }}" alt="">
-													</div>
-												</td>
-											{% else %}
-												<td>
-													<div class="attachment-file">
-														<p>Overwatch Actual Rank:</p>
-														<img src="{{ asset('img/rank/ow/'~ user.owActualRank ~'.jpg') }}" alt="">
-													</div>
-												</td>
-												<td>
-													<div class="attachment-file">
-														<p>Overwatch Best Rank:</p>
-														<img src="{{ asset('img/rank/ow/'~ user.owActualRank ~'.jpg') }}" alt="">
-													</div>
-												</td>
-											{% endif %}
-											</tr>
-										{% endif %}
+									</tr>
 									</table>
+									{% endif %}
+									{% if user.owBestRank != 1 and user.owBestRank != 2 %}
+									<table>
+									<tr>
+										{% if user.owActualRank == user.owBestRank %}
+										<td>
+											<div class="attachment-file">
+												<p>OW Actual & Best Rank :</p>
+												<img src="{{ asset('img/rank/ow/'~ user.owActualRank ~'.jpg') }}" alt="">
+											</div>
+										</td>
+										{% else %}
+										<td>
+											<div class="attachment-file">
+												<p>OW Actual Rank :</p>
+												<img src="{{ asset('img/rank/ow/'~ user.owActualRank ~'.jpg') }}" alt="">
+											</div>
+										</td>
+										<td>
+											<div class="attachment-file">
+												<p>OW Best Rank :</p>
+												<img src="{{ asset('img/rank/ow/'~ user.owBestRank ~'.jpg') }}" alt="">
+											</div>
+										</td>
+										{% endif %}
+									</tr>
+									</table>
+									{% endif %}
+									{% if user.pubgLink is defined %}
+										{% set PUBG = "https://pubg.op.gg/user/" ~ user.pubgLink %}
+										<br>
+										<p> PUBG ID : <a href="{{ PUBG }}" target="_blank" class="profile-panel"> {{ user.pubgLink }}</a></p>
+									{% endif %}
 								</div>
 							</div>
 						</li>
