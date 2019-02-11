@@ -24,7 +24,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/Teampage", name="team_page")
+     * @Route("/teampage", name="team_page")
      */
     public function teamPage()
     {
