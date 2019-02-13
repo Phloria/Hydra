@@ -87,18 +87,18 @@
                         <br>
                     {% endfor %}
                     <div class="ti-content">
-                            <div class="ti-thumb set-bg" data-setbg="{{ asset('img/tournament/1.jpg')}}"></div>
-                            <div class="ti-text">
-                                <h4>{{ app.user.username }}</h4>
-                                <ul>
-                                    <li><span>Joined since:</span> {{ app.user.joindate|date('Y-m-d') }}</li>
-                                    <li><span>CSGO:</span> {{ CSGO }} </li>
-                                    <li><span>Overwatch:</span> {{ OW }} </li>
-                                    <li><span>PUBG:</span> <a href="{{ PUBG }}" target="_blank" class="profile-panel">{{ PUBG }}</a></li>
-                                </ul>
-                                <p><span>Tournaments participated:</span> 0 (Not used for now) </p>
-                            </div>
+                        <div class="ti-thumb set-bg" data-setbg="{{ asset('img/tournament/1.jpg')}}"></div>
+                        <div class="ti-text">
+                            <h4>{{ app.user.username }}</h4>
+                            <ul>
+                                <li><span>Joined since:</span> {{ app.user.joindate|date('Y-m-d') }}</li>
+                                <li><span>CSGO:</span> {{ CSGO }} </li>
+                                <li><span>Overwatch:</span> {{ OW }} </li>
+                                <li><span>PUBG:</span> <a href="{{ PUBG }}" target="_blank" class="profile-panel">{{ PUBG }}</a></li>
+                            </ul>
+                            <p><span>Tournaments participated:</span> 0 (Not used for now) </p>
                         </div>
+                    </div>
                 </div>
                 <br><br>
                 <div class="size-btn user-panel-profile space-bottom" align="center">

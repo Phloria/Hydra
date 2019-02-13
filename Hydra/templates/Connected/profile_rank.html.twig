@@ -7,8 +7,7 @@
         <div class="bgprofile-rank-cs1">
             <div class="inner-profile-rank-cs1 registration-text">
                 <div class="centerprofile">
-                    <form method="post" action="{{path('profile_rank')}}" class="home-form formwidth">
-                        {{ form_start(form) }}
+                    {{ form_start(form, {'action': path('profile_rank'), 'method': 'post', class="home-form formwidth"}) )}}
                         <br><br><h2 class="white">My Rank</h2><br>
                         {% for message in app.flashes('error') %}
                             <div align="center" class="white">
@@ -38,8 +37,7 @@
                             {{ form_row(form.pubgLink, {'label': 'Ingame name of PUBG','attr': {'class': 'small-form-control'}}) }}
                         </div><br>
                         <button type="submit">Update</button>
-                        {{ form_end(form) }}
-                    </form>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>
