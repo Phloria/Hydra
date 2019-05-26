@@ -1,4 +1,4 @@
-{% extends is_granted('IS_AUTHENTICATED_FULLY') ? "Header-Footer/header_connected.html.twig" : "Header-Footer/header_disconnected.html.twig" %}
+{% extends "Header-Footer/header.html.twig" %}
 {% block header %}
     <link rel="stylesheet" href="{{ asset('css/register-login/style.css')}}"/>
 {% endblock %}

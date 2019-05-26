@@ -1,4 +1,5 @@
-{% extends "Header-Footer/header_connected.html.twig" %}
+{% extends "Header-Footer/header.html.twig" %}
+
 {% set CSGO = 'Unknown' %}
 {% if app.user.csgoActualRank == 1 %}
     {% set CSGO = 'Never Played' %}
