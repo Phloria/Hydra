@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="yaljlGP" resname="Videos">
+        <source>Videos</source>
+        <target>Videos</target>
+      </trans-unit>
+      <trans-unit id="2drngQO" resname="Games">
+        <source>Games</source>
+        <target>Jeux</target>
+      </trans-unit>
+      <trans-unit id="WYUDnxB" resname="Team">
+        <source>Team</source>
+        <target>Equipe</target>
+      </trans-unit>
+      <trans-unit id="EESkwFb" resname="Members">
+        <source>Members</source>
+        <target>Membres</target>
+      </trans-unit>
+      <trans-unit id="69rZukx" resname="Others">
+        <source>Others</source>
+        <target>Autres</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

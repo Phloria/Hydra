@@ -2,9 +2,9 @@
     <li><a href="/">Home</a></li>
     <li><a href="{{ asset('videos')}}">Videos</a></li>
     <li><a href="{{ asset('games')}}">Games</a></li>
-    <li><a href="{{ asset('teampage')}}">Team</a></li>
-    <li><a href="{{ asset('#')}}">Members</a></li>
-    <li><a href="{{ asset('#')}}">Contact</a></li>
+    {#<li><a href="{{ asset('teampage')}}">Team</a></li>#}
+    {#<li><a href="{{ asset('#')}}">Members</a></li>#}
+    <li><a href="{{ asset('#')}}">{{ "Others"|trans({}, "main") }}</a></li>
 {% endset %}
 
 <html lang="zxx">
@@ -62,6 +62,10 @@
                     <a href="{{ asset('login')}}">Login</a>
                 </div>
             {% endif %}
+            <div class="flags">
+                <a href="{{ path('changeLanguage', {language: 'fr'}) }}"><img class="small-icon" src="{{ asset('img/flag/Flag-France.png')}}"></a>
+                <a href="{{ path('changeLanguage', {language: 'us'}) }}"><img class="small-icon" src="{{ asset('img/flag/Flag-US.png')}}"></a>
+            </div>
 
             <!-- responsive -->
             <div class="nav-switch">

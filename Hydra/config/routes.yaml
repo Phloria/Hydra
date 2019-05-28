@@ -2,6 +2,10 @@ index:
     path: /
     controller: App\Controller\HomepageController::index
 
+changeLanguage:
+    path: /
+    controller: App\Controller\HomepageController::changeLanguage
+
 register:
     path: /registration
     controller: App\Controller\HomepageController::registerpage

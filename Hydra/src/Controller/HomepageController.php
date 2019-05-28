@@ -20,6 +20,19 @@ class HomepageController extends AbstractController
      */
     public function index()
     {
+
+        return $this->render('index.html.twig');
+    }
+
+    /**
+     * @Route("/")
+     */
+    public function changeLanguage(Request $request)
+    {
+        //var_dump($request->getLocale());die;
+        $language = $request->get('language');
+        $request->setLocale($language);
+        //var_dump($request->getLocale());die;
         return $this->render('index.html.twig');
     }
 

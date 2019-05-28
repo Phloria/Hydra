@@ -7,7 +7,7 @@
         <div class="bgprofile-rank-cs1">
             <div class="inner-profile-rank-cs1 registration-text">
                 <div class="centerprofile">
-                    {{ form_start(form, {'action': path('profile_rank'), 'method': 'post', class="home-form formwidth"}) )}}
+                    {{ form_start(form, {'action': path('profile_rank'), 'method': 'post', class:"home-form formwidth"}) }}
                         <br><br><h2 class="white">My Rank</h2><br>
                         {% for message in app.flashes('error') %}
                             <div align="center" class="white">
